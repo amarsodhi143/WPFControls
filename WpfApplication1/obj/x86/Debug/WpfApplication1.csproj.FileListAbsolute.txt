@@ -14,3 +14,19 @@ G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1
 G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1.csproj.GenerateResource.Cache
 G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1.exe
 G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1.pdb
+G:\WPFControls\WpfApplication1\bin\Debug\WpfApplication1.exe
+G:\WPFControls\WpfApplication1\bin\Debug\WpfApplication1.pdb
+G:\WPFControls\WpfApplication1\bin\Debug\WPFControl.dll
+G:\WPFControls\WpfApplication1\bin\Debug\WPFControl.pdb
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
+G:\WPFControls\WpfApplication1\obj\x86\Debug\MainWindow.baml
+G:\WPFControls\WpfApplication1\obj\x86\Debug\Theme\Dictionary.baml
+G:\WPFControls\WpfApplication1\obj\x86\Debug\App.baml
+G:\WPFControls\WpfApplication1\obj\x86\Debug\MainWindow.g.cs
+G:\WPFControls\WpfApplication1\obj\x86\Debug\App.g.cs
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1_MarkupCompile.cache
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1.g.resources
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1.Properties.Resources.resources
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1.csproj.GenerateResource.Cache
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1.exe
+G:\WPFControls\WpfApplication1\obj\x86\Debug\WpfApplication1.pdb

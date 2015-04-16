@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\
+G:\WPFControls\WpfApplication1\obj\x86\Debug\
 WpfApplication1
 none
 false
 DEBUG;TRACE
-G:\Projects\Wpf Project\WPFControl\WpfApplication1\App.xaml
+G:\WPFControls\WpfApplication1\App.xaml
 2-1396977502
 
 5-2017746502
-13-801443630
+13463483062
 MainWindow.xaml;Theme\Dictionary.xaml;
 
 False

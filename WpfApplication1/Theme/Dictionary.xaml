@@ -2,25 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:wpf="clr-namespace:WPFControl;assembly=WPFControl">
 
-
-    <Style x:Key="ComboToggleButton" TargetType="ToggleButton">
-        <Setter Property="Foreground" Value="#FF333333"/>
-        <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Background" Value="#FF1F3B53"/>
-        <Setter Property="Padding" Value="0"/>
+    <Style TargetType="ToggleButton" x:Key="ComboToggleButton">
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="HorizontalAlignment" Value="Right" />        
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
-                    <Grid>
-                        <Rectangle Fill="Transparent" />
-                        <ContentPresenter
-                            x:Name="contentPresenter"
-                            Content="{TemplateBinding Content}"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Margin="{TemplateBinding Padding}"/>
-                    </Grid>
+                    <Path Name="Arrow" Fill="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -35,24 +24,7 @@
                 <ControlTemplate TargetType="{x:Type wpf:AutoComplete}">
                     <Grid >
                         <TextBox Name="PART_EditableTextBox" />
-                        <ToggleButton Name="PART_ToggleButton"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Center"
-                                Style="{StaticResource ComboToggleButton}"
-                                Margin="0"
-                                HorizontalContentAlignment="Center" 
-                                Background="{TemplateBinding Background}" 
-                                BorderThickness="0" 
-                                Height="16" Width="16">
-                            <ToggleButton.Content>
-                                <Path x:Name="BtnArrow" Height="4" Width="8" Stretch="Uniform" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " 
-                                          Margin="0,0,6,0" HorizontalAlignment="Right">
-                                    <Path.Fill>
-                                        <SolidColorBrush x:Name="BtnArrowColor" Color="#FF333333"/>
-                                    </Path.Fill>
-                                </Path>
-                            </ToggleButton.Content>
-                        </ToggleButton>
+                        <ToggleButton Name="PART_ToggleButton" Style="{StaticResource ComboToggleButton}" />
                         <Popup x:Name="PART_Popup" StaysOpen="False" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}">
                             <ListBox Name="PART_ListBox" />
                         </Popup>
@@ -60,6 +32,8 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+
     </Style>
 
 </ResourceDictionary>
