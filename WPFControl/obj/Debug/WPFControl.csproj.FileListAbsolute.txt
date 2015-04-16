@@ -1,0 +1,6 @@
+G:\Projects\Wpf Project\WPFControl\WPFControl\bin\Debug\WPFControl.dll
+G:\Projects\Wpf Project\WPFControl\WPFControl\bin\Debug\WPFControl.pdb
+G:\Projects\Wpf Project\WPFControl\WPFControl\bin\Debug\Xceed.Wpf.Toolkit.dll
+G:\Projects\Wpf Project\WPFControl\WPFControl\obj\Debug\WPFControl.dll
+G:\Projects\Wpf Project\WPFControl\WPFControl\obj\Debug\WPFControl.pdb
+G:\Projects\Wpf Project\WPFControl\WPFControl\obj\Debug\WPFControl.csprojResolveAssemblyReference.cache
