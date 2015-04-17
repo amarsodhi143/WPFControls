@@ -47,7 +47,6 @@ namespace WpfApplication1
         private void cmbEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var aa = cmbEmployee.SelectedItem;
-            cmbEmployee1.SelectedValue = cmbEmployee.SelectedValue;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

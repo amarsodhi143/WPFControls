@@ -74,10 +74,7 @@ namespace WPFControl
                 _listBox.ItemsSource = _autoComplete.ItemsSource;
 
                 if (_autoComplete.ItemTemplate != null) _listBox.ItemTemplate = _autoComplete.ItemTemplate;
-                else if (!string.IsNullOrEmpty(this.DisplayMemberPath)) _listBox.DisplayMemberPath = _autoComplete.DisplayMemberPath;
-
-                if (string.IsNullOrEmpty(_autoComplete.FilterColumn) && !string.IsNullOrEmpty(_autoComplete.DisplayMemberPath))
-                    _autoComplete.FilterColumn = _autoComplete.DisplayMemberPath;
+                else if (!string.IsNullOrEmpty(_autoComplete.DisplayMemberPath)) _listBox.DisplayMemberPath = _autoComplete.DisplayMemberPath;
 
                 _listBox.SelectionChanged += new SelectionChangedEventHandler(_listBox_SelectionChanged);
             }
@@ -149,11 +146,10 @@ namespace WPFControl
 
         private void _listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(_autoComplete.FilterColumn))
-            {
-                var listbox = sender as ListBox;
-                _autoComplete.SelectedItem = listbox.SelectedItem;
-            }
+            GetSearchFilterColumn();
+
+            var listbox = sender as ListBox;
+            _autoComplete.SelectedItem = listbox.SelectedItem;
 
             IsDropDownOpen = false;
         }
@@ -171,7 +167,7 @@ namespace WPFControl
             {
                 _textBox.Text = string.Empty;
             }
-            
+
             if (_autoComplete.IsDisplayAllItems) RaiseTextBoxEvent();
         }
 
@@ -179,6 +175,8 @@ namespace WPFControl
         {
             var records = new List<object>();
             var textBox = sender as TextBox;
+
+            GetSearchFilterColumn();
 
             if (!string.IsNullOrEmpty(textBox.Text) && !string.IsNullOrEmpty(_autoComplete.FilterColumn))
             {
@@ -213,7 +211,7 @@ namespace WPFControl
 
         private void UnRaiseTextBoxEvent()
         {
-            _textBox.TextChanged -= _textBox_TextChanged;            
+            _textBox.TextChanged -= _textBox_TextChanged;
         }
 
         private void RaiseListBoxEvent()
@@ -224,6 +222,23 @@ namespace WPFControl
         private void RaiseTextBoxEvent()
         {
             _textBox.TextChanged += _textBox_TextChanged;
+        }
+
+        private void GetSearchFilterColumn()
+        {
+            if (string.IsNullOrEmpty(_autoComplete.FilterColumn))
+            {
+                if (_listBox.ItemTemplate != null)
+                {
+                    var lstBoxItem = _listBox.ItemContainerGenerator.ContainerFromIndex(0) as ListBoxItem;
+                    var textBlock = (TextBlock)VisualTreeHelperExtensions.FindVisualChild<TextBlock>(lstBoxItem);
+                    _autoComplete.FilterColumn = textBlock.GetBindingExpression(TextBlock.TextProperty).ParentBinding.Path.Path;    
+                }
+                else
+                {
+                    _autoComplete.FilterColumn = _listBox.DisplayMemberPath;
+                }                
+            }
         }
 
         private void DisplayAllRecords()
@@ -241,7 +256,7 @@ namespace WPFControl
             _listBox.ItemsSource = isDisplayAllItems && records.Count == 0 ? _autoComplete.ItemsSource : records;
             RaiseTextBoxEvent();
             RaiseListBoxEvent();
-        }        
+        }
 
     }
 }
