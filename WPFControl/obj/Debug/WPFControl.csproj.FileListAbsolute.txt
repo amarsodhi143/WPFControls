@@ -4,9 +4,13 @@ G:\Projects\Wpf Project\WPFControl\WPFControl\bin\Debug\Xceed.Wpf.Toolkit.dll
 G:\Projects\Wpf Project\WPFControl\WPFControl\obj\Debug\WPFControl.dll
 G:\Projects\Wpf Project\WPFControl\WPFControl\obj\Debug\WPFControl.pdb
 G:\Projects\Wpf Project\WPFControl\WPFControl\obj\Debug\WPFControl.csprojResolveAssemblyReference.cache
+G:\WPFControls\WPFControl\obj\Debug\WPFControl.csprojResolveAssemblyReference.cache
+G:\WPFControls\WPFControl\obj\Debug\WPFControl_MarkupCompile.cache
 G:\WPFControls\WPFControl\bin\Debug\WPFControl.dll
 G:\WPFControls\WPFControl\bin\Debug\WPFControl.pdb
-G:\WPFControls\WPFControl\bin\Debug\Xceed.Wpf.Toolkit.dll
-G:\WPFControls\WPFControl\obj\Debug\WPFControl.csprojResolveAssemblyReference.cache
+G:\WPFControls\WPFControl\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\WPFControls\WPFControl\obj\Debug\WPFControl_MarkupCompile.lref
+G:\WPFControls\WPFControl\obj\Debug\Dictionary.baml
+G:\WPFControls\WPFControl\obj\Debug\WPFControl.g.resources
 G:\WPFControls\WPFControl\obj\Debug\WPFControl.dll
 G:\WPFControls\WPFControl\obj\Debug\WPFControl.pdb

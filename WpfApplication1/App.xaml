@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="Theme\Dictionary.xaml" />
+        <!--<ResourceDictionary Source="Theme\Dictionary.xaml" />-->
     </Application.Resources>
 </Application>

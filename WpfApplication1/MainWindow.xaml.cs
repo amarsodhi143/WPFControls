@@ -52,7 +52,7 @@ namespace WpfApplication1
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            var aa = cmbEmployee1.SelectedItem;
+            cmbEmployee1.SelectedValue = null;
         }
     }
 

@@ -32,7 +32,7 @@ namespace WPFControl
 
         public AutoComplete()
         {
-
+            this.Resources = Application.LoadComponent(new Uri("/WPFControl;component/Dictionary.xaml", UriKind.RelativeOrAbsolute)) as ResourceDictionary;
         }
 
         public static readonly DependencyProperty IsAutoCompleteProperty = DependencyProperty.Register("IsAutoComplete", typeof(bool), typeof(AutoComplete),
@@ -166,13 +166,20 @@ namespace WPFControl
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
         {
+            if (_autoComplete.IsDisplayAllItems) UnRaiseTextBoxEvent();
+
             if (e.AddedItems.Count > 0)
             {
-                if (_autoComplete.IsDisplayAllItems) UnRaiseTextBoxEvent();
                 _textBox.Text = e.AddedItems.Cast<object>().First().GetValueFromObject(_autoComplete.FilterColumn);
-                if (_autoComplete.IsDisplayAllItems) RaiseTextBoxEvent();
                 base.OnSelectionChanged(new SelectionChangedEventArgs(SelectionChangedEvent, e.RemovedItems, e.AddedItems));
             }
+            else
+            {
+                _textBox.Text = string.Empty;
+            }
+
+
+            if (_autoComplete.IsDisplayAllItems) RaiseTextBoxEvent();
         }
 
         private void _textBox_TextChanged(object sender, TextChangedEventArgs e)

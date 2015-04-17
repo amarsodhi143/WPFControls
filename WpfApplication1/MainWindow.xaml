@@ -3,12 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="250" Width="525"
         xmlns:wpf="clr-namespace:WPFControl;assembly=WPFControl">
+    
+    <Window.Resources>
+        <DataTemplate x:Key="Emp">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding EmpId}" />
+                <TextBlock Text=" : " />
+                <TextBlock Text="{Binding EmpName}" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <wpf:AutoComplete Name="cmbEmployee" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
-                          SelectedValuePath="EmployeeIdx" FilterColumn="EmpId" DisplayMemberPath="EmpId" SelectionChanged="cmbEmployee_SelectionChanged"/>
+                          SelectedValuePath="EmpId" FilterColumn="EmpId" ItemTemplate="{StaticResource Emp}" SelectionChanged="cmbEmployee_SelectionChanged"/>
 
         <wpf:AutoComplete Name="cmbEmployee1" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,10,0,0"
-                          SelectedValuePath="EmployeeIdx" FilterColumn="EmpId" DisplayMemberPath="EmpId" />
+                          SelectedValuePath="EmpId" FilterColumn="EmpId" DisplayMemberPath="EmpId" />
 
         <wpf:AutoComplete Name="cmbCompany" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,50,0,0"
                           FilterColumn="CompanyId" DisplayMemberPath="CompanyId"/>
