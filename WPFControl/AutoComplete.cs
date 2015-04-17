@@ -42,7 +42,7 @@ namespace WPFControl
                                                                                new PropertyMetadata(true));
 
         public static readonly DependencyProperty IsDropDownOpenProperty = DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(AutoComplete),
-                                                                           new UIPropertyMetadata(false));
+                                                                           new PropertyMetadata());
 
         public static readonly DependencyProperty IsMultiSelectWithCheckBoxProperty = DependencyProperty.Register("IsMultiSelectWithCheckBox", typeof(bool), typeof(AutoComplete),
                                                                                       new PropertyMetadata(true));
@@ -81,7 +81,6 @@ namespace WPFControl
 
                 _listBox.SelectionChanged += new SelectionChangedEventHandler(_listBox_SelectionChanged);
             }
-
 
             if (toggleButton != null)
             {
@@ -145,12 +144,7 @@ namespace WPFControl
 
         private void toggleButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_autoComplete.IsDisplayAllItems && _autoComplete.Items.Count != _listBox.Items.Count)
-            {
-                BindItemsSourceToListBox(new List<object>(), true);
-            }
-
-            IsDropDownOpen = !IsDropDownOpen;
+            DisplayAllRecords();
         }
 
         private void _listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -177,8 +171,7 @@ namespace WPFControl
             {
                 _textBox.Text = string.Empty;
             }
-
-
+            
             if (_autoComplete.IsDisplayAllItems) RaiseTextBoxEvent();
         }
 
@@ -208,6 +201,7 @@ namespace WPFControl
                 if (!IsDropDownOpen)
                 {
                     IsDropDownOpen = !IsDropDownOpen;
+                    DisplayAllRecords();
                 }
             }
         }
@@ -219,7 +213,7 @@ namespace WPFControl
 
         private void UnRaiseTextBoxEvent()
         {
-            _textBox.TextChanged -= _textBox_TextChanged;
+            _textBox.TextChanged -= _textBox_TextChanged;            
         }
 
         private void RaiseListBoxEvent()
@@ -232,6 +226,14 @@ namespace WPFControl
             _textBox.TextChanged += _textBox_TextChanged;
         }
 
+        private void DisplayAllRecords()
+        {
+            if (_autoComplete.IsDisplayAllItems && _autoComplete.Items.Count != _listBox.Items.Count)
+            {
+                BindItemsSourceToListBox(new List<object>(), true);
+            }
+        }
+
         private void BindItemsSourceToListBox(List<object> records, bool isDisplayAllItems)
         {
             UnRaiseTextBoxEvent();
@@ -239,7 +241,7 @@ namespace WPFControl
             _listBox.ItemsSource = isDisplayAllItems && records.Count == 0 ? _autoComplete.ItemsSource : records;
             RaiseTextBoxEvent();
             RaiseListBoxEvent();
-        }
+        }        
 
     }
 }
