@@ -14,6 +14,7 @@ G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1
 G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1.csproj.GenerateResource.Cache
 G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1.exe
 G:\Projects\Wpf Project\WPFControl\WpfApplication1\obj\x86\Debug\WpfApplication1.pdb
+G:\WPFControls\WpfApplication1\bin\Debug\WpfApplication1.exe.config
 G:\WPFControls\WpfApplication1\bin\Debug\WpfApplication1.exe
 G:\WPFControls\WpfApplication1\bin\Debug\WpfApplication1.pdb
 G:\WPFControls\WpfApplication1\bin\Debug\WPFControl.dll

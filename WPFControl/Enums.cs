@@ -14,11 +14,5 @@ namespace WPFControl
             Contains,
             ContainsWithCaseSensitive
         }
-
-        public enum AutoCompleteOption
-        {
-            AutoCompleteText,
-            AutoCompleteTextWithCheckBox
-        }
     }
 }

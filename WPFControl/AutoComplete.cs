@@ -30,31 +30,32 @@ namespace WPFControl
         private TextBox _textBox;
         private ListBox _listBox;
 
+        static AutoComplete()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(AutoComplete), new FrameworkPropertyMetadata(typeof(AutoComplete)));
+        }
+
         public AutoComplete()
         {
-            this.Resources = Application.LoadComponent(new Uri("/WPFControl;component/Dictionary.xaml", UriKind.RelativeOrAbsolute)) as ResourceDictionary;
+            var myResourceDictionary = new ResourceDictionary();
+            myResourceDictionary.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
+            Application.Current.Resources.MergedDictionaries.Add(myResourceDictionary);
         }
 
         public static readonly DependencyProperty IsAutoCompleteProperty = DependencyProperty.Register("IsAutoComplete", typeof(bool), typeof(AutoComplete),
                                                                            new FrameworkPropertyMetadata(true));
 
-        public static readonly DependencyProperty IsDisplayAllItemsProperty = DependencyProperty.Register("IsDisplayAllItems", typeof(bool), typeof(AutoComplete),
+        public static readonly DependencyProperty IsFilterDisplayAllItemsProperty = DependencyProperty.Register("IsFilterDisplayAllItems", typeof(bool), typeof(AutoComplete),
                                                                                new PropertyMetadata(true));
 
         public static readonly DependencyProperty IsDropDownOpenProperty = DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(AutoComplete),
-                                                                           new PropertyMetadata());
-
-        public static readonly DependencyProperty IsMultiSelectWithCheckBoxProperty = DependencyProperty.Register("IsMultiSelectWithCheckBox", typeof(bool), typeof(AutoComplete),
-                                                                                      new PropertyMetadata(true));
+                                                                           new PropertyMetadata());        
 
         public static readonly DependencyProperty FilterColumnProperty = DependencyProperty.Register("FilterColumn", typeof(string), typeof(AutoComplete),
                                                                          new FrameworkPropertyMetadata());
 
         public static readonly DependencyProperty FilterModeProperty = DependencyProperty.Register("FilterMode", typeof(Enums.FilterMode), typeof(AutoComplete),
                                                                        new PropertyMetadata(Enums.FilterMode.StartsWith));
-
-        public static readonly DependencyProperty AutoCompleteFilterProperty = DependencyProperty.Register("AutoCompleteFilter", typeof(Enums.AutoCompleteOption), typeof(AutoComplete),
-                                                                               new PropertyMetadata(Enums.AutoCompleteOption.AutoCompleteText));
 
         public new static readonly RoutedEvent SelectionChangedEvent = EventManager.RegisterRoutedEvent("SelectionChanged", RoutingStrategy.Bubble,
                                                                        typeof(SelectionChangedEventHandler), typeof(AutoComplete));
@@ -70,7 +71,7 @@ namespace WPFControl
 
             if (_listBox != null)
             {
-                _listBox.Width = _autoComplete.Width;
+                _listBox.MinWidth = _autoComplete.Width;
                 _listBox.ItemsSource = _autoComplete.ItemsSource;
 
                 if (_autoComplete.ItemTemplate != null) _listBox.ItemTemplate = _autoComplete.ItemTemplate;
@@ -103,22 +104,16 @@ namespace WPFControl
             set { SetValue(IsAutoCompleteProperty, value); }
         }
 
-        public bool IsDisplayAllItems
+        public bool IsFilterDisplayAllItems
         {
-            get { return (bool)GetValue(IsDisplayAllItemsProperty); }
-            set { SetValue(IsDisplayAllItemsProperty, value); }
+            get { return (bool)GetValue(IsFilterDisplayAllItemsProperty); }
+            set { SetValue(IsFilterDisplayAllItemsProperty, value); }
         }
 
         public bool IsDropDownOpen
         {
             get { return (bool)GetValue(IsDropDownOpenProperty); }
             set { SetValue(IsDropDownOpenProperty, value); }
-        }
-
-        public bool IsMultiSelectWithCheckBox
-        {
-            get { return (bool)GetValue(IsMultiSelectWithCheckBoxProperty); }
-            set { SetValue(IsMultiSelectWithCheckBoxProperty, value); }
         }
 
         public string FilterColumn
@@ -133,11 +128,6 @@ namespace WPFControl
             set { SetValue(FilterModeProperty, value); }
         }
 
-        public Enums.AutoCompleteOption AutoCompleteFilter
-        {
-            get { return (Enums.AutoCompleteOption)GetValue(AutoCompleteFilterProperty); }
-            set { SetValue(AutoCompleteFilterProperty, value); }
-        }
 
         private void toggleButton_Click(object sender, RoutedEventArgs e)
         {
@@ -146,8 +136,6 @@ namespace WPFControl
 
         private void _listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            GetSearchFilterColumn();
-
             var listbox = sender as ListBox;
             _autoComplete.SelectedItem = listbox.SelectedItem;
 
@@ -156,19 +144,13 @@ namespace WPFControl
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
         {
-            if (_autoComplete.IsDisplayAllItems) UnRaiseTextBoxEvent();
-
             if (e.AddedItems.Count > 0)
             {
-                _textBox.Text = e.AddedItems.Cast<object>().First().GetValueFromObject(_autoComplete.FilterColumn);
+                if (IsFilterDisplayAllItems) UnRaiseTextBoxEvent();
+                _textBox.Text = e.AddedItems.Cast<object>().First().GetValueFromObject(FilterColumn);
                 base.OnSelectionChanged(new SelectionChangedEventArgs(SelectionChangedEvent, e.RemovedItems, e.AddedItems));
+                if (IsFilterDisplayAllItems) RaiseTextBoxEvent();
             }
-            else
-            {
-                _textBox.Text = string.Empty;
-            }
-
-            if (_autoComplete.IsDisplayAllItems) RaiseTextBoxEvent();
         }
 
         private void _textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -176,9 +158,7 @@ namespace WPFControl
             var records = new List<object>();
             var textBox = sender as TextBox;
 
-            GetSearchFilterColumn();
-
-            if (!string.IsNullOrEmpty(textBox.Text) && !string.IsNullOrEmpty(_autoComplete.FilterColumn))
+            if (!string.IsNullOrEmpty(textBox.Text.Trim()) && !string.IsNullOrEmpty(FilterColumn))
             {
                 records = _autoComplete.GetItems(textBox);
             }
@@ -189,7 +169,7 @@ namespace WPFControl
             }
 
             IsDropDownOpen = string.IsNullOrEmpty(textBox.Text) || records.Count > 0 ? true : false;
-            BindItemsSourceToListBox(records, string.IsNullOrEmpty(textBox.Text));
+            BindItemsSourceToListBox(records, string.IsNullOrEmpty(textBox.Text));            
         }
 
         private void _textBox_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -203,6 +183,7 @@ namespace WPFControl
                 }
             }
         }
+
 
         private void UnRaiseListBoxEvent()
         {
@@ -222,38 +203,22 @@ namespace WPFControl
         private void RaiseTextBoxEvent()
         {
             _textBox.TextChanged += _textBox_TextChanged;
-        }
-
-        private void GetSearchFilterColumn()
-        {
-            if (string.IsNullOrEmpty(_autoComplete.FilterColumn))
-            {
-                if (_listBox.ItemTemplate != null)
-                {
-                    var lstBoxItem = _listBox.ItemContainerGenerator.ContainerFromIndex(0) as ListBoxItem;
-                    var textBlock = (TextBlock)VisualTreeHelperExtensions.FindVisualChild<TextBlock>(lstBoxItem);
-                    _autoComplete.FilterColumn = textBlock.GetBindingExpression(TextBlock.TextProperty).ParentBinding.Path.Path;    
-                }
-                else
-                {
-                    _autoComplete.FilterColumn = _listBox.DisplayMemberPath;
-                }                
-            }
-        }
+        }        
 
         private void DisplayAllRecords()
         {
-            if (_autoComplete.IsDisplayAllItems && _autoComplete.Items.Count != _listBox.Items.Count)
+            if (IsFilterDisplayAllItems && _autoComplete.Items.Count != _listBox.Items.Count)
             {
                 BindItemsSourceToListBox(new List<object>(), true);
             }
         }
 
-        private void BindItemsSourceToListBox(List<object> records, bool isDisplayAllItems)
+        private void BindItemsSourceToListBox(List<object> records, bool isFilterDisplayAllItems)
         {
             UnRaiseTextBoxEvent();
             UnRaiseListBoxEvent();
-            _listBox.ItemsSource = isDisplayAllItems && records.Count == 0 ? _autoComplete.ItemsSource : records;
+            _listBox.ItemsSource = null;
+            _listBox.ItemsSource = isFilterDisplayAllItems && records.Count == 0 ? _autoComplete.ItemsSource : records;
             RaiseTextBoxEvent();
             RaiseListBoxEvent();
         }

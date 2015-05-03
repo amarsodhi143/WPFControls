@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestCompanyDBModelStoreContainer" CdmEntityContainer="TestCompanyDBEntities">
+    <EntitySetMapping Name="ActionTypes">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ActionType">
+        <MappingFragment StoreEntitySet="ActionType">
+          <ScalarProperty Name="ActionTypeIdx" ColumnName="ActionTypeIdx" />
+          <ScalarProperty Name="ActionTypeName" ColumnName="ActionTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionTypePunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ActionTypePunch">
+        <MappingFragment StoreEntitySet="ActionTypePunch">
+          <ScalarProperty Name="ActionTypePunchIdx" ColumnName="ActionTypePunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="ActionTypeIdx" ColumnName="ActionTypeIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComboBuilders">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ComboBuilder">
+        <MappingFragment StoreEntitySet="ComboBuilder">
+          <ScalarProperty Name="ComboBuilderIdx" ColumnName="ComboBuilderIdx" />
+          <ScalarProperty Name="ComboBuilderId" ColumnName="ComboBuilderId" />
+          <ScalarProperty Name="ComboBuilderName" ColumnName="ComboBuilderName" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComboBuilderPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ComboBuilderPunch">
+        <MappingFragment StoreEntitySet="ComboBuilderPunch">
+          <ScalarProperty Name="ComboBuilderPunchIdx" ColumnName="ComboBuilderPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="ComboBuilderIdx" ColumnName="ComboBuilderIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Crews">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Crew">
+        <MappingFragment StoreEntitySet="Crew">
+          <ScalarProperty Name="CrewIdx" ColumnName="CrewIdx" />
+          <ScalarProperty Name="CrewName" ColumnName="CrewName" />
+          <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CrewOvertimeTypeId" ColumnName="CrewOvertimeTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewActions">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewAction">
+        <MappingFragment StoreEntitySet="CrewAction">
+          <ScalarProperty Name="CrewActionIdx" ColumnName="CrewActionIdx" />
+          <ScalarProperty Name="CrewActionId" ColumnName="CrewActionId" />
+          <ScalarProperty Name="CrewActionName" ColumnName="CrewActionName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewActionPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewActionPunch">
+        <MappingFragment StoreEntitySet="CrewActionPunch">
+          <ScalarProperty Name="CrewActionPunchIdx" ColumnName="CrewActionPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="CrewActionIdx" ColumnName="CrewActionIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewBuilders">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewBuilder">
+        <MappingFragment StoreEntitySet="CrewBuilder">
+          <ScalarProperty Name="CrewBuilderIdx" ColumnName="CrewBuilderIdx" />
+          <ScalarProperty Name="CrewBuilderId" ColumnName="CrewBuilderId" />
+          <ScalarProperty Name="CrewBuilderName" ColumnName="CrewBuilderName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewBuilderPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewBuilderPunch">
+        <MappingFragment StoreEntitySet="CrewBuilderPunch">
+          <ScalarProperty Name="CrewBuilderPunchIdx" ColumnName="CrewBuilderPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="CrewBuilderIdx" ColumnName="CrewBuilderIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewOvertimeTypes">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewOvertimeType">
+        <MappingFragment StoreEntitySet="CrewOvertimeType">
+          <ScalarProperty Name="CrewOvertimeTypeId" ColumnName="CrewOvertimeTypeId" />
+          <ScalarProperty Name="DailyLimit" ColumnName="DailyLimit" />
+          <ScalarProperty Name="WeeklyLimit" ColumnName="WeeklyLimit" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewPunch">
+        <MappingFragment StoreEntitySet="CrewPunch">
+          <ScalarProperty Name="CrewPunchIdx" ColumnName="CrewPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="CrewIdx" ColumnName="CrewIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewSheetDetails">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewSheetDetail">
+        <MappingFragment StoreEntitySet="CrewSheetDetail">
+          <ScalarProperty Name="CrewSheetDetailIdx" ColumnName="CrewSheetDetailIdx" />
+          <ScalarProperty Name="CrewIdx" ColumnName="CrewIdx" />
+          <ScalarProperty Name="InTime" ColumnName="InTime" />
+          <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="TotalLunch" ColumnName="TotalLunch" />
+          <ScalarProperty Name="TotalBreak" ColumnName="TotalBreak" />
+          <ScalarProperty Name="CalcDate" ColumnName="CalcDate" />
+          <ScalarProperty Name="JobIdx" ColumnName="JobIdx" />
+          <ScalarProperty Name="LocationIdx" ColumnName="LocationIdx" />
+          <ScalarProperty Name="EmployeeIdx" ColumnName="EmployeeIdx" />
+          <ScalarProperty Name="DeviceIdx" ColumnName="DeviceIdx" />
+          <ScalarProperty Name="LunchInTime" ColumnName="LunchInTime" />
+          <ScalarProperty Name="LunchOutTime" ColumnName="LunchOutTime" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+          <ScalarProperty Name="GroupIdx" ColumnName="GroupIdx" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+          <ScalarProperty Name="ErrorType" ColumnName="ErrorType" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrewStringConversions">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.CrewStringConversion">
+        <MappingFragment StoreEntitySet="CrewStringConversion">
+          <ScalarProperty Name="CrewStringConversionIdx" ColumnName="CrewStringConversionIdx" />
+          <ScalarProperty Name="CrewString" ColumnName="CrewString" />
+          <ScalarProperty Name="CrewIdx" ColumnName="CrewIdx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Device">
+        <MappingFragment StoreEntitySet="Device">
+          <ScalarProperty Name="DeviceIdx" ColumnName="DeviceIdx" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="GroupIdx" ColumnName="GroupIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeviceDefaults">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.DeviceDefault">
+        <MappingFragment StoreEntitySet="DeviceDefault">
+          <ScalarProperty Name="DeviceDefaultIdx" ColumnName="DeviceDefaultIdx" />
+          <ScalarProperty Name="DeviceIdx" ColumnName="DeviceIdx" />
+          <ScalarProperty Name="DefaultCrewIdx" ColumnName="DefaultCrewIdx" />
+          <ScalarProperty Name="DefaultLocationIdx" ColumnName="DefaultLocationIdx" />
+          <ScalarProperty Name="DefaultJobIdx" ColumnName="DefaultJobIdx" />
+          <ScalarProperty Name="TimeOffset" ColumnName="TimeOffset" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeIdx" ColumnName="EmployeeIdx" />
+          <ScalarProperty Name="ImportEmployeeIdx" ColumnName="ImportEmployeeIdx" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ImportComEmpIdx" ColumnName="ImportComEmpIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.EmployeePunch">
+        <MappingFragment StoreEntitySet="EmployeePunch">
+          <ScalarProperty Name="EmployeePunchIdx" ColumnName="EmployeePunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="EmployeeIdx" ColumnName="EmployeeIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="GroupIdx" ColumnName="GroupIdx" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupDefaults">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.GroupDefault">
+        <MappingFragment StoreEntitySet="GroupDefault">
+          <ScalarProperty Name="GroupDefaultIdx" ColumnName="GroupDefaultIdx" />
+          <ScalarProperty Name="GroupIdx" ColumnName="GroupIdx" />
+          <ScalarProperty Name="DefaultCrewIdx" ColumnName="DefaultCrewIdx" />
+          <ScalarProperty Name="DefaultLocationIdx" ColumnName="DefaultLocationIdx" />
+          <ScalarProperty Name="DefaultJobIdx" ColumnName="DefaultJobIdx" />
+          <ScalarProperty Name="TimeOffset" ColumnName="TimeOffset" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportEmployeeFiles">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ImportEmployeeFile">
+        <MappingFragment StoreEntitySet="ImportEmployeeFile">
+          <ScalarProperty Name="ImportComEmpIdx" ColumnName="ImportComEmpIdx" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OriginalFileName" ColumnName="OriginalFileName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ProcessedFileName" ColumnName="ProcessedFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportFileDetails">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ImportFileDetail">
+        <MappingFragment StoreEntitySet="ImportFileDetail">
+          <ScalarProperty Name="FileDetailIdx" ColumnName="FileDetailIdx" />
+          <ScalarProperty Name="FileHdrIdx" ColumnName="FileHdrIdx" />
+          <ScalarProperty Name="PunchDate" ColumnName="PunchDate" />
+          <ScalarProperty Name="PunchTime" ColumnName="PunchTime" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="IsModified" ColumnName="IsModified" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsCalculated" ColumnName="IsCalculated" />
+          <ScalarProperty Name="CalcDate" ColumnName="CalcDate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+          <ScalarProperty Name="PunchTypeIdx" ColumnName="PunchTypeIdx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportFileDetailPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ImportFileDetailPunch">
+        <MappingFragment StoreEntitySet="ImportFileDetailPunch">
+          <ScalarProperty Name="ImportFileDetailPunchIdx" ColumnName="ImportFileDetailPunchIdx" />
+          <ScalarProperty Name="FileDetailIdx" ColumnName="FileDetailIdx" />
+          <ScalarProperty Name="LocationIdx" ColumnName="LocationIdx" />
+          <ScalarProperty Name="JobIdx" ColumnName="JobIdx" />
+          <ScalarProperty Name="ActionTypeIdx" ColumnName="ActionTypeIdx" />
+          <ScalarProperty Name="EmployeeIdx" ColumnName="EmployeeIdx" />
+          <ScalarProperty Name="CrewIdx" ColumnName="CrewIdx" />
+          <ScalarProperty Name="CrewActionIdx" ColumnName="CrewActionIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+          <ScalarProperty Name="DeviceIdx" ColumnName="DeviceIdx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportFileDetailRaws">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ImportFileDetailRaw">
+        <MappingFragment StoreEntitySet="ImportFileDetailRaw">
+          <ScalarProperty Name="FileDetailIdx" ColumnName="FileDetailIdx" />
+          <ScalarProperty Name="FileHdrIdx" ColumnName="FileHdrIdx" />
+          <ScalarProperty Name="PunchDate" ColumnName="PunchDate" />
+          <ScalarProperty Name="PunchTime" ColumnName="PunchTime" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="ActionTypeIdx" ColumnName="ActionTypeIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportFileHeaders">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ImportFileHeader">
+        <MappingFragment StoreEntitySet="ImportFileHeader">
+          <ScalarProperty Name="FileHdrIdx" ColumnName="FileHdrIdx" />
+          <ScalarProperty Name="DeviceIdx" ColumnName="DeviceIdx" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ImportDateTime" ColumnName="ImportDateTime" />
+          <ScalarProperty Name="ImportedBy" ColumnName="ImportedBy" />
+          <ScalarProperty Name="LastImportedBy" ColumnName="LastImportedBy" />
+          <ScalarProperty Name="LastImportedOn" ColumnName="LastImportedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="JobIdx" ColumnName="JobIdx" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.JobPunch">
+        <MappingFragment StoreEntitySet="JobPunch">
+          <ScalarProperty Name="JobPunchIdx" ColumnName="JobPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="JobIdx" ColumnName="JobIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobRates">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.JobRate">
+        <MappingFragment StoreEntitySet="JobRate">
+          <ScalarProperty Name="JobRateIdx" ColumnName="JobRateIdx" />
+          <ScalarProperty Name="JobIdx" ColumnName="JobIdx" />
+          <ScalarProperty Name="JobRate1" ColumnName="JobRate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobStringConversions">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.JobStringConversion">
+        <MappingFragment StoreEntitySet="JobStringConversion">
+          <ScalarProperty Name="JobStringConversionIdx" ColumnName="JobStringConversionIdx" />
+          <ScalarProperty Name="JobString" ColumnName="JobString" />
+          <ScalarProperty Name="JobIdx" ColumnName="JobIdx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LocationIdx" ColumnName="LocationIdx" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationBuilders">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.LocationBuilder">
+        <MappingFragment StoreEntitySet="LocationBuilder">
+          <ScalarProperty Name="LocationBuilderIdx" ColumnName="LocationBuilderIdx" />
+          <ScalarProperty Name="LocationBuilderId" ColumnName="LocationBuilderId" />
+          <ScalarProperty Name="LocationBuilderName" ColumnName="LocationBuilderName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationBuilderPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.LocationBuilderPunch">
+        <MappingFragment StoreEntitySet="LocationBuilderPunch">
+          <ScalarProperty Name="LocationBuilderPunchIdx" ColumnName="LocationBuilderPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="LocationBuilderIdx" ColumnName="LocationBuilderIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.LocationPunch">
+        <MappingFragment StoreEntitySet="LocationPunch">
+          <ScalarProperty Name="LocationPunchIdx" ColumnName="LocationPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="LocationIdx" ColumnName="LocationIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationStringConversions">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.LocationStringConversion">
+        <MappingFragment StoreEntitySet="LocationStringConversion">
+          <ScalarProperty Name="LocationStringConversionIdx" ColumnName="LocationStringConversionIdx" />
+          <ScalarProperty Name="LocationString" ColumnName="LocationString" />
+          <ScalarProperty Name="LocationIdx" ColumnName="LocationIdx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Migrations">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Migration">
+        <MappingFragment StoreEntitySet="Migration">
+          <ScalarProperty Name="MigrationIdx" ColumnName="MigrationIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="ValueTypeIdx" ColumnName="ValueTypeIdx" />
+          <ScalarProperty Name="ValueName" ColumnName="ValueName" />
+          <ScalarProperty Name="ValueString" ColumnName="ValueString" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modifiers">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Modifier">
+        <MappingFragment StoreEntitySet="Modifier">
+          <ScalarProperty Name="ModifierIdx" ColumnName="ModifierIdx" />
+          <ScalarProperty Name="ModifierId" ColumnName="ModifierId" />
+          <ScalarProperty Name="ModifierName" ColumnName="ModifierName" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModifierPunches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.ModifierPunch">
+        <MappingFragment StoreEntitySet="ModifierPunch">
+          <ScalarProperty Name="ModifierPunchIdx" ColumnName="ModifierPunchIdx" />
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="ModifierIdx" ColumnName="ModifierIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsUnAssigned" ColumnName="IsUnAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Punches">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.Punch">
+        <MappingFragment StoreEntitySet="Punch">
+          <ScalarProperty Name="PunchIdx" ColumnName="PunchIdx" />
+          <ScalarProperty Name="PunchId" ColumnName="PunchId" />
+          <ScalarProperty Name="PunchTypeIdx" ColumnName="PunchTypeIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="LastUpdatedOn" ColumnName="LastUpdatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PunchTypes">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.PunchType">
+        <MappingFragment StoreEntitySet="PunchType">
+          <ScalarProperty Name="PunchTypeIdx" ColumnName="PunchTypeIdx" />
+          <ScalarProperty Name="PunchTypeName" ColumnName="PunchTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotalHours">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.TotalHour">
+        <MappingFragment StoreEntitySet="TotalHour">
+          <ScalarProperty Name="TotalHoursDetailIdx" ColumnName="TotalHoursDetailIdx" />
+          <ScalarProperty Name="GroupIdx" ColumnName="GroupIdx" />
+          <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+          <ScalarProperty Name="CalcDate" ColumnName="CalcDate" />
+          <ScalarProperty Name="CrewIdx" ColumnName="CrewIdx" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="EmployeeIdx" ColumnName="EmployeeIdx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPreferences">
+      <EntityTypeMapping TypeName="TestCompanyDBModel.UserPreference">
+        <MappingFragment StoreEntitySet="UserPreference">
+          <ScalarProperty Name="UserPreferenceIdx" ColumnName="UserPreferenceIdx" />
+          <ScalarProperty Name="UserIdx" ColumnName="UserIdx" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

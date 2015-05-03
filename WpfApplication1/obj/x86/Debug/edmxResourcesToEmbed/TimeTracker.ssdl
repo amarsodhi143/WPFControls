@@ -1,0 +1,1550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestCompanyDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="TestCompanyDBModelStoreContainer">
+    <EntitySet Name="ActionType" EntityType="TestCompanyDBModel.Store.ActionType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActionTypePunch" EntityType="TestCompanyDBModel.Store.ActionTypePunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComboBuilder" EntityType="TestCompanyDBModel.Store.ComboBuilder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComboBuilderPunch" EntityType="TestCompanyDBModel.Store.ComboBuilderPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Crew" EntityType="TestCompanyDBModel.Store.Crew" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewAction" EntityType="TestCompanyDBModel.Store.CrewAction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewActionPunch" EntityType="TestCompanyDBModel.Store.CrewActionPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewBuilder" EntityType="TestCompanyDBModel.Store.CrewBuilder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewBuilderPunch" EntityType="TestCompanyDBModel.Store.CrewBuilderPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewOvertimeType" EntityType="TestCompanyDBModel.Store.CrewOvertimeType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewPunch" EntityType="TestCompanyDBModel.Store.CrewPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewSheetDetail" EntityType="TestCompanyDBModel.Store.CrewSheetDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CrewStringConversion" EntityType="TestCompanyDBModel.Store.CrewStringConversion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Device" EntityType="TestCompanyDBModel.Store.Device" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DeviceDefault" EntityType="TestCompanyDBModel.Store.DeviceDefault" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="TestCompanyDBModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeePunch" EntityType="TestCompanyDBModel.Store.EmployeePunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group" EntityType="TestCompanyDBModel.Store.Group" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupDefault" EntityType="TestCompanyDBModel.Store.GroupDefault" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportEmployeeFile" EntityType="TestCompanyDBModel.Store.ImportEmployeeFile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportFileDetail" EntityType="TestCompanyDBModel.Store.ImportFileDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportFileDetailPunch" EntityType="TestCompanyDBModel.Store.ImportFileDetailPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportFileDetailRaw" EntityType="TestCompanyDBModel.Store.ImportFileDetailRaw" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImportFileHeader" EntityType="TestCompanyDBModel.Store.ImportFileHeader" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Job" EntityType="TestCompanyDBModel.Store.Job" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobPunch" EntityType="TestCompanyDBModel.Store.JobPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobRate" EntityType="TestCompanyDBModel.Store.JobRate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JobStringConversion" EntityType="TestCompanyDBModel.Store.JobStringConversion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Location" EntityType="TestCompanyDBModel.Store.Location" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationBuilder" EntityType="TestCompanyDBModel.Store.LocationBuilder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationBuilderPunch" EntityType="TestCompanyDBModel.Store.LocationBuilderPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationPunch" EntityType="TestCompanyDBModel.Store.LocationPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationStringConversion" EntityType="TestCompanyDBModel.Store.LocationStringConversion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Migration" EntityType="TestCompanyDBModel.Store.Migration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modifier" EntityType="TestCompanyDBModel.Store.Modifier" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModifierPunch" EntityType="TestCompanyDBModel.Store.ModifierPunch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Punch" EntityType="TestCompanyDBModel.Store.Punch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PunchType" EntityType="TestCompanyDBModel.Store.PunchType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TotalHour" EntityType="TestCompanyDBModel.Store.TotalHour" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserPreference" EntityType="TestCompanyDBModel.Store.UserPreference" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__ActionTyp__Actio__1AD3FDA4" Association="TestCompanyDBModel.Store.FK__ActionTyp__Actio__1AD3FDA4">
+      <End Role="ActionType" EntitySet="ActionType" />
+      <End Role="ActionTypePunch" EntitySet="ActionTypePunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ActionTyp__Punch__00200768" Association="TestCompanyDBModel.Store.FK__ActionTyp__Punch__00200768">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="ActionTypePunch" EntitySet="ActionTypePunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ComboBuil__Combo__37703C52" Association="TestCompanyDBModel.Store.FK__ComboBuil__Combo__37703C52">
+      <End Role="ComboBuilder" EntitySet="ComboBuilder" />
+      <End Role="ComboBuilderPunch" EntitySet="ComboBuilderPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ComboBuil__Punch__02084FDA" Association="TestCompanyDBModel.Store.FK__ComboBuil__Punch__02084FDA">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="ComboBuilderPunch" EntitySet="ComboBuilderPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Crew__CrewOverti__0D44F85C" Association="TestCompanyDBModel.Store.FK__Crew__CrewOverti__0D44F85C">
+      <End Role="CrewOvertimeType" EntitySet="CrewOvertimeType" />
+      <End Role="Crew" EntitySet="Crew" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewActio__CrewA__03F0984C" Association="TestCompanyDBModel.Store.FK__CrewActio__CrewA__03F0984C">
+      <End Role="CrewAction" EntitySet="CrewAction" />
+      <End Role="CrewActionPunch" EntitySet="CrewActionPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewActio__Punch__04E4BC85" Association="TestCompanyDBModel.Store.FK__CrewActio__Punch__04E4BC85">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="CrewActionPunch" EntitySet="CrewActionPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewBuild__CrewB__05D8E0BE" Association="TestCompanyDBModel.Store.FK__CrewBuild__CrewB__05D8E0BE">
+      <End Role="CrewBuilder" EntitySet="CrewBuilder" />
+      <End Role="CrewBuilderPunch" EntitySet="CrewBuilderPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewBuild__Punch__06CD04F7" Association="TestCompanyDBModel.Store.FK__CrewBuild__Punch__06CD04F7">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="CrewBuilderPunch" EntitySet="CrewBuilderPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewPunch__CrewI__208CD6FA" Association="TestCompanyDBModel.Store.FK__CrewPunch__CrewI__208CD6FA">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="CrewPunch" EntitySet="CrewPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewPunch__Punch__08B54D69" Association="TestCompanyDBModel.Store.FK__CrewPunch__Punch__08B54D69">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="CrewPunch" EntitySet="CrewPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__Devic__09A971A2" Association="TestCompanyDBModel.Store.FK__CrewSheet__Devic__09A971A2">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__Emplo__0A9D95DB" Association="TestCompanyDBModel.Store.FK__CrewSheet__Emplo__0A9D95DB">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__Group__0B91BA14" Association="TestCompanyDBModel.Store.FK__CrewSheet__Group__0B91BA14">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__JobId__6442E2C9" Association="TestCompanyDBModel.Store.FK__CrewSheet__JobId__6442E2C9">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__JobId__6AEFE058" Association="TestCompanyDBModel.Store.FK__CrewSheet__JobId__6AEFE058">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__Locat__65370702" Association="TestCompanyDBModel.Store.FK__CrewSheet__Locat__65370702">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewSheet__Locat__6BE40491" Association="TestCompanyDBModel.Store.FK__CrewSheet__Locat__6BE40491">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CrewStrin__CrewI__1209AD79" Association="TestCompanyDBModel.Store.FK__CrewStrin__CrewI__1209AD79">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="CrewStringConversion" EntitySet="CrewStringConversion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DeviceDef__Defau__0F2D40CE" Association="TestCompanyDBModel.Store.FK__DeviceDef__Defau__0F2D40CE">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="DeviceDefault" EntitySet="DeviceDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DeviceDef__Defau__10216507" Association="TestCompanyDBModel.Store.FK__DeviceDef__Defau__10216507">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="DeviceDefault" EntitySet="DeviceDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DeviceDef__Defau__11158940" Association="TestCompanyDBModel.Store.FK__DeviceDef__Defau__11158940">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="DeviceDefault" EntitySet="DeviceDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DeviceDef__Devic__160F4887" Association="TestCompanyDBModel.Store.FK__DeviceDef__Devic__160F4887">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="DeviceDefault" EntitySet="DeviceDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__Import__17036CC0" Association="TestCompanyDBModel.Store.FK__Employee__Import__17036CC0">
+      <End Role="ImportEmployeeFile" EntitySet="ImportEmployeeFile" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmployeeP__Emplo__17F790F9" Association="TestCompanyDBModel.Store.FK__EmployeeP__Emplo__17F790F9">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeePunch" EntitySet="EmployeePunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmployeeP__Punch__18EBB532" Association="TestCompanyDBModel.Store.FK__EmployeeP__Punch__18EBB532">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="EmployeePunch" EntitySet="EmployeePunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Defau__6166761E" Association="TestCompanyDBModel.Store.FK__GroupDefa__Defau__6166761E">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Defau__625A9A57" Association="TestCompanyDBModel.Store.FK__GroupDefa__Defau__625A9A57">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Defau__634EBE90" Association="TestCompanyDBModel.Store.FK__GroupDefa__Defau__634EBE90">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Defau__681373AD" Association="TestCompanyDBModel.Store.FK__GroupDefa__Defau__681373AD">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Defau__690797E6" Association="TestCompanyDBModel.Store.FK__GroupDefa__Defau__690797E6">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Defau__69FBBC1F" Association="TestCompanyDBModel.Store.FK__GroupDefa__Defau__69FBBC1F">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GroupDefa__Group__1F98B2C1" Association="TestCompanyDBModel.Store.FK__GroupDefa__Group__1F98B2C1">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="GroupDefault" EntitySet="GroupDefault" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__Actio__00DF2177" Association="TestCompanyDBModel.Store.FK__ImportFil__Actio__00DF2177">
+      <End Role="ActionType" EntitySet="ActionType" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__CrewA__245D67DE" Association="TestCompanyDBModel.Store.FK__ImportFil__CrewA__245D67DE">
+      <End Role="CrewAction" EntitySet="CrewAction" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__CrewI__02C769E9" Association="TestCompanyDBModel.Store.FK__ImportFil__CrewI__02C769E9">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__Devic__2645B050" Association="TestCompanyDBModel.Store.FK__ImportFil__Devic__2645B050">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__Emplo__2739D489" Association="TestCompanyDBModel.Store.FK__ImportFil__Emplo__2739D489">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__FileD__282DF8C2" Association="TestCompanyDBModel.Store.FK__ImportFil__FileD__282DF8C2">
+      <End Role="ImportFileDetail" EntitySet="ImportFileDetail" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__JobId__7FEAFD3E" Association="TestCompanyDBModel.Store.FK__ImportFil__JobId__7FEAFD3E">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__Locat__7EF6D905" Association="TestCompanyDBModel.Store.FK__ImportFil__Locat__7EF6D905">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="ImportFileDetailPunch" EntitySet="ImportFileDetailPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ImportFil__Punch__0697FACD" Association="TestCompanyDBModel.Store.FK__ImportFil__Punch__0697FACD">
+      <End Role="PunchType" EntitySet="PunchType" />
+      <End Role="ImportFileDetail" EntitySet="ImportFileDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobPunch__JobIdx__2BFE89A6" Association="TestCompanyDBModel.Store.FK__JobPunch__JobIdx__2BFE89A6">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="JobPunch" EntitySet="JobPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobPunch__PunchI__2FCF1A8A" Association="TestCompanyDBModel.Store.FK__JobPunch__PunchI__2FCF1A8A">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="JobPunch" EntitySet="JobPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobRate__JobIdx__57DD0BE4" Association="TestCompanyDBModel.Store.FK__JobRate__JobIdx__57DD0BE4">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="JobRate" EntitySet="JobRate" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobString__JobId__12FDD1B2" Association="TestCompanyDBModel.Store.FK__JobString__JobId__12FDD1B2">
+      <End Role="Job" EntitySet="Job" />
+      <End Role="JobStringConversion" EntitySet="JobStringConversion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LocationB__Locat__32AB8735" Association="TestCompanyDBModel.Store.FK__LocationB__Locat__32AB8735">
+      <End Role="LocationBuilder" EntitySet="LocationBuilder" />
+      <End Role="LocationBuilderPunch" EntitySet="LocationBuilderPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LocationB__Punch__339FAB6E" Association="TestCompanyDBModel.Store.FK__LocationB__Punch__339FAB6E">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="LocationBuilderPunch" EntitySet="LocationBuilderPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LocationP__Locat__31B762FC" Association="TestCompanyDBModel.Store.FK__LocationP__Locat__31B762FC">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="LocationPunch" EntitySet="LocationPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LocationP__Punch__3587F3E0" Association="TestCompanyDBModel.Store.FK__LocationP__Punch__3587F3E0">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="LocationPunch" EntitySet="LocationPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__LocationS__Locat__13F1F5EB" Association="TestCompanyDBModel.Store.FK__LocationS__Locat__13F1F5EB">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="LocationStringConversion" EntitySet="LocationStringConversion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ModifierP__Modif__37703C52" Association="TestCompanyDBModel.Store.FK__ModifierP__Modif__37703C52">
+      <End Role="Modifier" EntitySet="Modifier" />
+      <End Role="ModifierPunch" EntitySet="ModifierPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ModifierP__Punch__3864608B" Association="TestCompanyDBModel.Store.FK__ModifierP__Punch__3864608B">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="ModifierPunch" EntitySet="ModifierPunch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Punch__PunchType__607251E5" Association="TestCompanyDBModel.Store.FK__Punch__PunchType__607251E5">
+      <End Role="PunchType" EntitySet="PunchType" />
+      <End Role="Punch" EntitySet="Punch" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TotalHour__CrewI__662B2B3B" Association="TestCompanyDBModel.Store.FK__TotalHour__CrewI__662B2B3B">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="TotalHour" EntitySet="TotalHour" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TotalHour__CrewI__6CD828CA" Association="TestCompanyDBModel.Store.FK__TotalHour__CrewI__6CD828CA">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="TotalHour" EntitySet="TotalHour" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TotalHour__Emplo__3C34F16F" Association="TestCompanyDBModel.Store.FK__TotalHour__Emplo__3C34F16F">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="TotalHour" EntitySet="TotalHour" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TotalHour__Group__3D2915A8" Association="TestCompanyDBModel.Store.FK__TotalHour__Group__3D2915A8">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="TotalHour" EntitySet="TotalHour" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TotalHour__Group__3E1D39E1" Association="TestCompanyDBModel.Store.FK__TotalHour__Group__3E1D39E1">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="TotalHour" EntitySet="TotalHour" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CrewSheetDetail_Crew" Association="TestCompanyDBModel.Store.FK_CrewSheetDetail_Crew">
+      <End Role="Crew" EntitySet="Crew" />
+      <End Role="CrewSheetDetail" EntitySet="CrewSheetDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Device_Group" Association="TestCompanyDBModel.Store.FK_Device_Group">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Device" EntitySet="Device" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportFileDetail_ImportFileHeader" Association="TestCompanyDBModel.Store.FK_ImportFileDetail_ImportFileHeader">
+      <End Role="ImportFileHeader" EntitySet="ImportFileHeader" />
+      <End Role="ImportFileDetail" EntitySet="ImportFileDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportFileDetail_Punch" Association="TestCompanyDBModel.Store.FK_ImportFileDetail_Punch">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="ImportFileDetail" EntitySet="ImportFileDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportFileDetailRaw_ActionType" Association="TestCompanyDBModel.Store.FK_ImportFileDetailRaw_ActionType">
+      <End Role="ActionType" EntitySet="ActionType" />
+      <End Role="ImportFileDetailRaw" EntitySet="ImportFileDetailRaw" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportFileDetailRaw_ImportFileHeader" Association="TestCompanyDBModel.Store.FK_ImportFileDetailRaw_ImportFileHeader">
+      <End Role="ImportFileHeader" EntitySet="ImportFileHeader" />
+      <End Role="ImportFileDetailRaw" EntitySet="ImportFileDetailRaw" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportFileDetailRaw_Punch" Association="TestCompanyDBModel.Store.FK_ImportFileDetailRaw_Punch">
+      <End Role="Punch" EntitySet="Punch" />
+      <End Role="ImportFileDetailRaw" EntitySet="ImportFileDetailRaw" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImportFileHeader_Device" Association="TestCompanyDBModel.Store.FK_ImportFileHeader_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="ImportFileHeader" EntitySet="ImportFileHeader" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ActionType">
+    <Key>
+      <PropertyRef Name="ActionTypeIdx" />
+    </Key>
+    <Property Name="ActionTypeIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ActionTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ActionTypePunch">
+    <Key>
+      <PropertyRef Name="ActionTypePunchIdx" />
+    </Key>
+    <Property Name="ActionTypePunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="ActionTypeIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComboBuilder">
+    <Key>
+      <PropertyRef Name="ComboBuilderIdx" />
+    </Key>
+    <Property Name="ComboBuilderIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ComboBuilderId" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ComboBuilderName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsPrimary" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComboBuilderPunch">
+    <Key>
+      <PropertyRef Name="ComboBuilderPunchIdx" />
+    </Key>
+    <Property Name="ComboBuilderPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="ComboBuilderIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Crew">
+    <Key>
+      <PropertyRef Name="CrewIdx" />
+    </Key>
+    <Property Name="CrewIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CrewName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CrewId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CrewOvertimeTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewAction">
+    <Key>
+      <PropertyRef Name="CrewActionIdx" />
+    </Key>
+    <Property Name="CrewActionIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CrewActionId" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CrewActionName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewActionPunch">
+    <Key>
+      <PropertyRef Name="CrewActionPunchIdx" />
+    </Key>
+    <Property Name="CrewActionPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="CrewActionIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewBuilder">
+    <Key>
+      <PropertyRef Name="CrewBuilderIdx" />
+    </Key>
+    <Property Name="CrewBuilderIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CrewBuilderId" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CrewBuilderName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewBuilderPunch">
+    <Key>
+      <PropertyRef Name="CrewBuilderPunchIdx" />
+    </Key>
+    <Property Name="CrewBuilderPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="CrewBuilderIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewOvertimeType">
+    <Key>
+      <PropertyRef Name="CrewOvertimeTypeId" />
+    </Key>
+    <Property Name="CrewOvertimeTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DailyLimit" Type="float" Nullable="false" />
+    <Property Name="WeeklyLimit" Type="float" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewPunch">
+    <Key>
+      <PropertyRef Name="CrewPunchIdx" />
+    </Key>
+    <Property Name="CrewPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="CrewIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrewSheetDetail">
+    <Key>
+      <PropertyRef Name="CrewSheetDetailIdx" />
+    </Key>
+    <Property Name="CrewSheetDetailIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CrewIdx" Type="int" Nullable="false" />
+    <Property Name="InTime" Type="time" Nullable="false" />
+    <Property Name="OutTime" Type="time" Nullable="false" />
+    <Property Name="TotalHours" Type="float" Nullable="false" />
+    <Property Name="TotalLunch" Type="float" Nullable="false" />
+    <Property Name="TotalBreak" Type="float" Nullable="false" />
+    <Property Name="CalcDate" Type="date" Nullable="false" />
+    <Property Name="JobIdx" Type="int" Nullable="false" />
+    <Property Name="LocationIdx" Type="int" Nullable="false" />
+    <Property Name="EmployeeIdx" Type="int" />
+    <Property Name="DeviceIdx" Type="int" />
+    <Property Name="LunchInTime" Type="time" Nullable="false" />
+    <Property Name="LunchOutTime" Type="time" Nullable="false" />
+    <Property Name="LastUpdatedBy" Type="int" />
+    <Property Name="LastUpdatedOn" Type="datetime" />
+    <Property Name="GroupIdx" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedOn" Type="datetime" />
+    <Property Name="ErrorType" Type="varchar" MaxLength="200" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="CrewStringConversion">
+    <Key>
+      <PropertyRef Name="CrewStringConversionIdx" />
+    </Key>
+    <Property Name="CrewStringConversionIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CrewString" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CrewIdx" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="DeviceIdx" />
+    </Key>
+    <Property Name="DeviceIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="GroupIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="DeviceName" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DeviceDefault">
+    <Key>
+      <PropertyRef Name="DeviceDefaultIdx" />
+    </Key>
+    <Property Name="DeviceDefaultIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceIdx" Type="int" Nullable="false" />
+    <Property Name="DefaultCrewIdx" Type="int" Nullable="false" />
+    <Property Name="DefaultLocationIdx" Type="int" Nullable="false" />
+    <Property Name="DefaultJobIdx" Type="int" Nullable="false" />
+    <Property Name="TimeOffset" Type="float" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeIdx" />
+    </Key>
+    <Property Name="EmployeeIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ImportEmployeeIdx" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ImportComEmpIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeePunch">
+    <Key>
+      <PropertyRef Name="EmployeePunchIdx" />
+    </Key>
+    <Property Name="EmployeePunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="EmployeeIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="GroupIdx" />
+    </Key>
+    <Property Name="GroupIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="GroupName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupDefault">
+    <Key>
+      <PropertyRef Name="GroupDefaultIdx" />
+    </Key>
+    <Property Name="GroupDefaultIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupIdx" Type="int" Nullable="false" />
+    <Property Name="DefaultCrewIdx" Type="int" Nullable="false" />
+    <Property Name="DefaultLocationIdx" Type="int" Nullable="false" />
+    <Property Name="DefaultJobIdx" Type="int" Nullable="false" />
+    <Property Name="TimeOffset" Type="float" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportEmployeeFile">
+    <Key>
+      <PropertyRef Name="ImportComEmpIdx" />
+    </Key>
+    <Property Name="ImportComEmpIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="OriginalFileName" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="ProcessedFileName" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportFileDetail">
+    <Key>
+      <PropertyRef Name="FileDetailIdx" />
+    </Key>
+    <Property Name="FileDetailIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileHdrIdx" Type="int" Nullable="false" />
+    <Property Name="PunchDate" Type="date" Nullable="false" />
+    <Property Name="PunchTime" Type="time" Nullable="false" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="IsModified" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsCalculated" Type="bit" Nullable="false" />
+    <Property Name="CalcDate" Type="date" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="PunchTypeIdx" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportFileDetailPunch">
+    <Key>
+      <PropertyRef Name="ImportFileDetailPunchIdx" />
+    </Key>
+    <Property Name="ImportFileDetailPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileDetailIdx" Type="int" Nullable="false" />
+    <Property Name="LocationIdx" Type="int" Nullable="false" />
+    <Property Name="JobIdx" Type="int" Nullable="false" />
+    <Property Name="ActionTypeIdx" Type="int" Nullable="false" />
+    <Property Name="EmployeeIdx" Type="int" Nullable="false" />
+    <Property Name="CrewIdx" Type="int" Nullable="false" />
+    <Property Name="CrewActionIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdatedOn" Type="datetime" Nullable="false" />
+    <Property Name="DeviceIdx" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportFileDetailRaw">
+    <Key>
+      <PropertyRef Name="FileDetailIdx" />
+    </Key>
+    <Property Name="FileDetailIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileHdrIdx" Type="int" Nullable="false" />
+    <Property Name="PunchDate" Type="date" Nullable="false" />
+    <Property Name="PunchTime" Type="time" Nullable="false" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="ActionTypeIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportFileHeader">
+    <Key>
+      <PropertyRef Name="FileHdrIdx" />
+    </Key>
+    <Property Name="FileHdrIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceIdx" Type="int" Nullable="false" />
+    <Property Name="FileName" Type="varchar" MaxLength="50" />
+    <Property Name="ImportDateTime" Type="datetime" Nullable="false" />
+    <Property Name="ImportedBy" Type="int" />
+    <Property Name="LastImportedBy" Type="int" />
+    <Property Name="LastImportedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JobIdx" />
+    </Key>
+    <Property Name="JobIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="JobId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobPunch">
+    <Key>
+      <PropertyRef Name="JobPunchIdx" />
+    </Key>
+    <Property Name="JobPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="JobIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobRate">
+    <Key>
+      <PropertyRef Name="JobRateIdx" />
+    </Key>
+    <Property Name="JobRateIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobIdx" Type="int" Nullable="false" />
+    <Property Name="JobRate" Type="float" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobStringConversion">
+    <Key>
+      <PropertyRef Name="JobStringConversionIdx" />
+    </Key>
+    <Property Name="JobStringConversionIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="JobString" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="JobIdx" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationIdx" />
+    </Key>
+    <Property Name="LocationIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LocationId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocationBuilder">
+    <Key>
+      <PropertyRef Name="LocationBuilderIdx" />
+    </Key>
+    <Property Name="LocationBuilderIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationBuilderId" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="LocationBuilderName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocationBuilderPunch">
+    <Key>
+      <PropertyRef Name="LocationBuilderPunchIdx" />
+    </Key>
+    <Property Name="LocationBuilderPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="LocationBuilderIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocationPunch">
+    <Key>
+      <PropertyRef Name="LocationPunchIdx" />
+    </Key>
+    <Property Name="LocationPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="LocationIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocationStringConversion">
+    <Key>
+      <PropertyRef Name="LocationStringConversionIdx" />
+    </Key>
+    <Property Name="LocationStringConversionIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationString" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="LocationIdx" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Migration">
+    <Key>
+      <PropertyRef Name="MigrationIdx" />
+    </Key>
+    <Property Name="MigrationIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="ValueTypeIdx" Type="int" Nullable="false" />
+    <Property Name="ValueName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ValueString" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modifier">
+    <Key>
+      <PropertyRef Name="ModifierIdx" />
+    </Key>
+    <Property Name="ModifierIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModifierId" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="ModifierName" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModifierPunch">
+    <Key>
+      <PropertyRef Name="ModifierPunchIdx" />
+    </Key>
+    <Property Name="ModifierPunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchIdx" Type="int" Nullable="false" />
+    <Property Name="ModifierIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="IsUnAssigned" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Punch">
+    <Key>
+      <PropertyRef Name="PunchIdx" />
+    </Key>
+    <Property Name="PunchIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PunchTypeIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="LastUpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PunchType">
+    <Key>
+      <PropertyRef Name="PunchTypeIdx" />
+    </Key>
+    <Property Name="PunchTypeIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PunchTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TotalHour">
+    <Key>
+      <PropertyRef Name="TotalHoursDetailIdx" />
+    </Key>
+    <Property Name="TotalHoursDetailIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupIdx" Type="int" Nullable="false" />
+    <Property Name="TotalHours" Type="float" Nullable="false" />
+    <Property Name="CalcDate" Type="date" Nullable="false" />
+    <Property Name="CrewIdx" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="EmployeeIdx" Type="int" />
+  </EntityType>
+  <EntityType Name="UserPreference">
+    <Key>
+      <PropertyRef Name="UserPreferenceIdx" />
+    </Key>
+    <Property Name="UserPreferenceIdx" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserIdx" Type="int" Nullable="false" />
+    <Property Name="Key" Type="int" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ActionTyp__Actio__1AD3FDA4">
+    <End Role="ActionType" Type="TestCompanyDBModel.Store.ActionType" Multiplicity="1" />
+    <End Role="ActionTypePunch" Type="TestCompanyDBModel.Store.ActionTypePunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionType">
+        <PropertyRef Name="ActionTypeIdx" />
+      </Principal>
+      <Dependent Role="ActionTypePunch">
+        <PropertyRef Name="ActionTypeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ActionTyp__Punch__00200768">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="ActionTypePunch" Type="TestCompanyDBModel.Store.ActionTypePunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="ActionTypePunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ComboBuil__Combo__37703C52">
+    <End Role="ComboBuilder" Type="TestCompanyDBModel.Store.ComboBuilder" Multiplicity="1" />
+    <End Role="ComboBuilderPunch" Type="TestCompanyDBModel.Store.ComboBuilderPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComboBuilder">
+        <PropertyRef Name="ComboBuilderIdx" />
+      </Principal>
+      <Dependent Role="ComboBuilderPunch">
+        <PropertyRef Name="ComboBuilderIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ComboBuil__Punch__02084FDA">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="ComboBuilderPunch" Type="TestCompanyDBModel.Store.ComboBuilderPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="ComboBuilderPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Crew__CrewOverti__0D44F85C">
+    <End Role="CrewOvertimeType" Type="TestCompanyDBModel.Store.CrewOvertimeType" Multiplicity="1" />
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrewOvertimeType">
+        <PropertyRef Name="CrewOvertimeTypeId" />
+      </Principal>
+      <Dependent Role="Crew">
+        <PropertyRef Name="CrewOvertimeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewActio__CrewA__03F0984C">
+    <End Role="CrewAction" Type="TestCompanyDBModel.Store.CrewAction" Multiplicity="1" />
+    <End Role="CrewActionPunch" Type="TestCompanyDBModel.Store.CrewActionPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrewAction">
+        <PropertyRef Name="CrewActionIdx" />
+      </Principal>
+      <Dependent Role="CrewActionPunch">
+        <PropertyRef Name="CrewActionIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewActio__Punch__04E4BC85">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="CrewActionPunch" Type="TestCompanyDBModel.Store.CrewActionPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="CrewActionPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewBuild__CrewB__05D8E0BE">
+    <End Role="CrewBuilder" Type="TestCompanyDBModel.Store.CrewBuilder" Multiplicity="1" />
+    <End Role="CrewBuilderPunch" Type="TestCompanyDBModel.Store.CrewBuilderPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrewBuilder">
+        <PropertyRef Name="CrewBuilderIdx" />
+      </Principal>
+      <Dependent Role="CrewBuilderPunch">
+        <PropertyRef Name="CrewBuilderIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewBuild__Punch__06CD04F7">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="CrewBuilderPunch" Type="TestCompanyDBModel.Store.CrewBuilderPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="CrewBuilderPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewPunch__CrewI__208CD6FA">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="CrewPunch" Type="TestCompanyDBModel.Store.CrewPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="CrewPunch">
+        <PropertyRef Name="CrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewPunch__Punch__08B54D69">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="CrewPunch" Type="TestCompanyDBModel.Store.CrewPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="CrewPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__Devic__09A971A2">
+    <End Role="Device" Type="TestCompanyDBModel.Store.Device" Multiplicity="0..1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="DeviceIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__Emplo__0A9D95DB">
+    <End Role="Employee" Type="TestCompanyDBModel.Store.Employee" Multiplicity="0..1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="EmployeeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__Group__0B91BA14">
+    <End Role="Group" Type="TestCompanyDBModel.Store.Group" Multiplicity="0..1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="GroupIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__JobId__6442E2C9">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="JobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__JobId__6AEFE058">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="JobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__Locat__65370702">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="LocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewSheet__Locat__6BE40491">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="LocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CrewStrin__CrewI__1209AD79">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="CrewStringConversion" Type="TestCompanyDBModel.Store.CrewStringConversion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="CrewStringConversion">
+        <PropertyRef Name="CrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DeviceDef__Defau__0F2D40CE">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="DeviceDefault" Type="TestCompanyDBModel.Store.DeviceDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="DeviceDefault">
+        <PropertyRef Name="DefaultCrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DeviceDef__Defau__10216507">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="DeviceDefault" Type="TestCompanyDBModel.Store.DeviceDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="DeviceDefault">
+        <PropertyRef Name="DefaultLocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DeviceDef__Defau__11158940">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="DeviceDefault" Type="TestCompanyDBModel.Store.DeviceDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="DeviceDefault">
+        <PropertyRef Name="DefaultJobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DeviceDef__Devic__160F4887">
+    <End Role="Device" Type="TestCompanyDBModel.Store.Device" Multiplicity="1" />
+    <End Role="DeviceDefault" Type="TestCompanyDBModel.Store.DeviceDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceIdx" />
+      </Principal>
+      <Dependent Role="DeviceDefault">
+        <PropertyRef Name="DeviceIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__Import__17036CC0">
+    <End Role="ImportEmployeeFile" Type="TestCompanyDBModel.Store.ImportEmployeeFile" Multiplicity="1" />
+    <End Role="Employee" Type="TestCompanyDBModel.Store.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImportEmployeeFile">
+        <PropertyRef Name="ImportComEmpIdx" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="ImportComEmpIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmployeeP__Emplo__17F790F9">
+    <End Role="Employee" Type="TestCompanyDBModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeePunch" Type="TestCompanyDBModel.Store.EmployeePunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeIdx" />
+      </Principal>
+      <Dependent Role="EmployeePunch">
+        <PropertyRef Name="EmployeeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmployeeP__Punch__18EBB532">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="EmployeePunch" Type="TestCompanyDBModel.Store.EmployeePunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="EmployeePunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Defau__6166761E">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="DefaultCrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Defau__625A9A57">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="DefaultLocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Defau__634EBE90">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="DefaultJobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Defau__681373AD">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="DefaultCrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Defau__690797E6">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="DefaultLocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Defau__69FBBC1F">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="DefaultJobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GroupDefa__Group__1F98B2C1">
+    <End Role="Group" Type="TestCompanyDBModel.Store.Group" Multiplicity="1" />
+    <End Role="GroupDefault" Type="TestCompanyDBModel.Store.GroupDefault" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupIdx" />
+      </Principal>
+      <Dependent Role="GroupDefault">
+        <PropertyRef Name="GroupIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__Actio__00DF2177">
+    <End Role="ActionType" Type="TestCompanyDBModel.Store.ActionType" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionType">
+        <PropertyRef Name="ActionTypeIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="ActionTypeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__CrewA__245D67DE">
+    <End Role="CrewAction" Type="TestCompanyDBModel.Store.CrewAction" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrewAction">
+        <PropertyRef Name="CrewActionIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="CrewActionIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__CrewI__02C769E9">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="CrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__Devic__2645B050">
+    <End Role="Device" Type="TestCompanyDBModel.Store.Device" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="DeviceIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__Emplo__2739D489">
+    <End Role="Employee" Type="TestCompanyDBModel.Store.Employee" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="EmployeeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__FileD__282DF8C2">
+    <End Role="ImportFileDetail" Type="TestCompanyDBModel.Store.ImportFileDetail" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImportFileDetail">
+        <PropertyRef Name="FileDetailIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="FileDetailIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__JobId__7FEAFD3E">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="JobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__Locat__7EF6D905">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="ImportFileDetailPunch" Type="TestCompanyDBModel.Store.ImportFileDetailPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailPunch">
+        <PropertyRef Name="LocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ImportFil__Punch__0697FACD">
+    <End Role="PunchType" Type="TestCompanyDBModel.Store.PunchType" Multiplicity="1" />
+    <End Role="ImportFileDetail" Type="TestCompanyDBModel.Store.ImportFileDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PunchType">
+        <PropertyRef Name="PunchTypeIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetail">
+        <PropertyRef Name="PunchTypeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobPunch__JobIdx__2BFE89A6">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="JobPunch" Type="TestCompanyDBModel.Store.JobPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="JobPunch">
+        <PropertyRef Name="JobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobPunch__PunchI__2FCF1A8A">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="JobPunch" Type="TestCompanyDBModel.Store.JobPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="JobPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobRate__JobIdx__57DD0BE4">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="JobRate" Type="TestCompanyDBModel.Store.JobRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="JobRate">
+        <PropertyRef Name="JobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobString__JobId__12FDD1B2">
+    <End Role="Job" Type="TestCompanyDBModel.Store.Job" Multiplicity="1" />
+    <End Role="JobStringConversion" Type="TestCompanyDBModel.Store.JobStringConversion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobIdx" />
+      </Principal>
+      <Dependent Role="JobStringConversion">
+        <PropertyRef Name="JobIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LocationB__Locat__32AB8735">
+    <End Role="LocationBuilder" Type="TestCompanyDBModel.Store.LocationBuilder" Multiplicity="1" />
+    <End Role="LocationBuilderPunch" Type="TestCompanyDBModel.Store.LocationBuilderPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationBuilder">
+        <PropertyRef Name="LocationBuilderIdx" />
+      </Principal>
+      <Dependent Role="LocationBuilderPunch">
+        <PropertyRef Name="LocationBuilderIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LocationB__Punch__339FAB6E">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="LocationBuilderPunch" Type="TestCompanyDBModel.Store.LocationBuilderPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="LocationBuilderPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LocationP__Locat__31B762FC">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="LocationPunch" Type="TestCompanyDBModel.Store.LocationPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="LocationPunch">
+        <PropertyRef Name="LocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LocationP__Punch__3587F3E0">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="LocationPunch" Type="TestCompanyDBModel.Store.LocationPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="LocationPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__LocationS__Locat__13F1F5EB">
+    <End Role="Location" Type="TestCompanyDBModel.Store.Location" Multiplicity="1" />
+    <End Role="LocationStringConversion" Type="TestCompanyDBModel.Store.LocationStringConversion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationIdx" />
+      </Principal>
+      <Dependent Role="LocationStringConversion">
+        <PropertyRef Name="LocationIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ModifierP__Modif__37703C52">
+    <End Role="Modifier" Type="TestCompanyDBModel.Store.Modifier" Multiplicity="1" />
+    <End Role="ModifierPunch" Type="TestCompanyDBModel.Store.ModifierPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modifier">
+        <PropertyRef Name="ModifierIdx" />
+      </Principal>
+      <Dependent Role="ModifierPunch">
+        <PropertyRef Name="ModifierIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ModifierP__Punch__3864608B">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="ModifierPunch" Type="TestCompanyDBModel.Store.ModifierPunch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="ModifierPunch">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Punch__PunchType__607251E5">
+    <End Role="PunchType" Type="TestCompanyDBModel.Store.PunchType" Multiplicity="1" />
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PunchType">
+        <PropertyRef Name="PunchTypeIdx" />
+      </Principal>
+      <Dependent Role="Punch">
+        <PropertyRef Name="PunchTypeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TotalHour__CrewI__662B2B3B">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="TotalHour" Type="TestCompanyDBModel.Store.TotalHour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="TotalHour">
+        <PropertyRef Name="CrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TotalHour__CrewI__6CD828CA">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="TotalHour" Type="TestCompanyDBModel.Store.TotalHour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="TotalHour">
+        <PropertyRef Name="CrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TotalHour__Emplo__3C34F16F">
+    <End Role="Employee" Type="TestCompanyDBModel.Store.Employee" Multiplicity="0..1" />
+    <End Role="TotalHour" Type="TestCompanyDBModel.Store.TotalHour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeIdx" />
+      </Principal>
+      <Dependent Role="TotalHour">
+        <PropertyRef Name="EmployeeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TotalHour__Group__3D2915A8">
+    <End Role="Group" Type="TestCompanyDBModel.Store.Group" Multiplicity="1" />
+    <End Role="TotalHour" Type="TestCompanyDBModel.Store.TotalHour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupIdx" />
+      </Principal>
+      <Dependent Role="TotalHour">
+        <PropertyRef Name="GroupIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TotalHour__Group__3E1D39E1">
+    <End Role="Group" Type="TestCompanyDBModel.Store.Group" Multiplicity="1" />
+    <End Role="TotalHour" Type="TestCompanyDBModel.Store.TotalHour" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupIdx" />
+      </Principal>
+      <Dependent Role="TotalHour">
+        <PropertyRef Name="GroupIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CrewSheetDetail_Crew">
+    <End Role="Crew" Type="TestCompanyDBModel.Store.Crew" Multiplicity="1" />
+    <End Role="CrewSheetDetail" Type="TestCompanyDBModel.Store.CrewSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Crew">
+        <PropertyRef Name="CrewIdx" />
+      </Principal>
+      <Dependent Role="CrewSheetDetail">
+        <PropertyRef Name="CrewIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Device_Group">
+    <End Role="Group" Type="TestCompanyDBModel.Store.Group" Multiplicity="1" />
+    <End Role="Device" Type="TestCompanyDBModel.Store.Device" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="GroupIdx" />
+      </Principal>
+      <Dependent Role="Device">
+        <PropertyRef Name="GroupIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportFileDetail_ImportFileHeader">
+    <End Role="ImportFileHeader" Type="TestCompanyDBModel.Store.ImportFileHeader" Multiplicity="1" />
+    <End Role="ImportFileDetail" Type="TestCompanyDBModel.Store.ImportFileDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImportFileHeader">
+        <PropertyRef Name="FileHdrIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetail">
+        <PropertyRef Name="FileHdrIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportFileDetail_Punch">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="ImportFileDetail" Type="TestCompanyDBModel.Store.ImportFileDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetail">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportFileDetailRaw_ActionType">
+    <End Role="ActionType" Type="TestCompanyDBModel.Store.ActionType" Multiplicity="1" />
+    <End Role="ImportFileDetailRaw" Type="TestCompanyDBModel.Store.ImportFileDetailRaw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionType">
+        <PropertyRef Name="ActionTypeIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailRaw">
+        <PropertyRef Name="ActionTypeIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportFileDetailRaw_ImportFileHeader">
+    <End Role="ImportFileHeader" Type="TestCompanyDBModel.Store.ImportFileHeader" Multiplicity="1" />
+    <End Role="ImportFileDetailRaw" Type="TestCompanyDBModel.Store.ImportFileDetailRaw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImportFileHeader">
+        <PropertyRef Name="FileHdrIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailRaw">
+        <PropertyRef Name="FileHdrIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportFileDetailRaw_Punch">
+    <End Role="Punch" Type="TestCompanyDBModel.Store.Punch" Multiplicity="1" />
+    <End Role="ImportFileDetailRaw" Type="TestCompanyDBModel.Store.ImportFileDetailRaw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Punch">
+        <PropertyRef Name="PunchIdx" />
+      </Principal>
+      <Dependent Role="ImportFileDetailRaw">
+        <PropertyRef Name="PunchIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImportFileHeader_Device">
+    <End Role="Device" Type="TestCompanyDBModel.Store.Device" Multiplicity="1" />
+    <End Role="ImportFileHeader" Type="TestCompanyDBModel.Store.ImportFileHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceIdx" />
+      </Principal>
+      <Dependent Role="ImportFileHeader">
+        <PropertyRef Name="DeviceIdx" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

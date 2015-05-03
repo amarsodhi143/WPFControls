@@ -5,24 +5,26 @@
         xmlns:wpf="clr-namespace:WPFControl;assembly=WPFControl">
     
     <Window.Resources>
-        <DataTemplate x:Key="Emp">
+        <DataTemplate x:Key="CrewTemplate">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding EmpId}" />
+                <TextBlock Text="{Binding EmployeeId}" />
                 <TextBlock Text=" : " />
-                <TextBlock Text="{Binding EmpName}" />
+                <TextBlock Text="{Binding FirstName}" />
+                <TextBlock Text=", " />
+                <TextBlock Text="{Binding LastName}" />
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
     
     <Grid>
         <wpf:AutoComplete Name="cmbEmployee" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
-                          SelectedValuePath="EmpId" ItemTemplate="{StaticResource Emp}" SelectionChanged="cmbEmployee_SelectionChanged"/>
+                          SelectedValuePath="EmployeeId" FilterColumn="EmployeeId" ItemTemplate="{StaticResource CrewTemplate}" SelectionChanged="cmbEmployee_SelectionChanged"/>
 
-        <wpf:AutoComplete Name="cmbEmployee1" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,10,0,0"
+        <!--<wpf:AutoComplete Name="cmbEmployee1" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,10,0,0"
                           SelectedValuePath="EmpId" DisplayMemberPath="EmpId" />
 
         <wpf:AutoComplete Name="cmbCompany" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,50,0,0"
-                          DisplayMemberPath="CompanyId"/>
+                          DisplayMemberPath="CompanyId"/>-->
         
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="25,184,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
     </Grid>
