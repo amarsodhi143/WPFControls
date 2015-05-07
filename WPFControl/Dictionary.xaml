@@ -27,8 +27,8 @@
                 <ControlTemplate TargetType="{x:Type wpf:AutoComplete}">
                     <Grid >
                         <TextBox Name="PART_EditableTextBox" />
-                        <ToggleButton Name="PART_ToggleButton" Style="{StaticResource ComboToggleButton}" IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" />
-                        <Popup x:Name="PART_Popup" StaysOpen="False" IsOpen="{Binding IsDropDownOpen, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}">
+                        <ToggleButton Name="PART_ToggleButton" Style="{StaticResource ComboToggleButton}" />
+                        <Popup x:Name="PART_Popup" StaysOpen="False">
                             <ListBox Name="PART_ListBox" MaxHeight="250" />
                         </Popup>
                     </Grid>

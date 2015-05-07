@@ -25,21 +25,20 @@ namespace WPFControl
         private const string ElementTextBox = "PART_EditableTextBox";
         private const string ElementListBox = "PART_ListBox";
         private const string ElementToggleButton = "PART_ToggleButton";
+        private const string ElementPopup = "PART_Popup";
 
         private AutoComplete _autoComplete;
         private TextBox _textBox;
         private ListBox _listBox;
-
-        static AutoComplete()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(AutoComplete), new FrameworkPropertyMetadata(typeof(AutoComplete)));
-        }
+        private bool IsDropDownOpen = false;
 
         public AutoComplete()
         {
-            var myResourceDictionary = new ResourceDictionary();
-            myResourceDictionary.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
-            Application.Current.Resources.MergedDictionaries.Add(myResourceDictionary);
+            this.Resources.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
+
+            //var myResourceDictionary = new ResourceDictionary();
+            //myResourceDictionary.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
+            //Application.Current.Resources.MergedDictionaries.Add(myResourceDictionary);
         }
 
         public static readonly DependencyProperty IsAutoCompleteProperty = DependencyProperty.Register("IsAutoComplete", typeof(bool), typeof(AutoComplete),
@@ -47,9 +46,6 @@ namespace WPFControl
 
         public static readonly DependencyProperty IsFilterDisplayAllItemsProperty = DependencyProperty.Register("IsFilterDisplayAllItems", typeof(bool), typeof(AutoComplete),
                                                                                new PropertyMetadata(true));
-
-        public static readonly DependencyProperty IsDropDownOpenProperty = DependencyProperty.Register("IsDropDownOpen", typeof(bool), typeof(AutoComplete),
-                                                                           new PropertyMetadata());        
 
         public static readonly DependencyProperty FilterColumnProperty = DependencyProperty.Register("FilterColumn", typeof(string), typeof(AutoComplete),
                                                                          new FrameworkPropertyMetadata());
@@ -98,6 +94,11 @@ namespace WPFControl
             remove { RemoveHandler(SelectionChangedEvent, value); }
         }
 
+        public Popup Popup
+        {
+            get { return (Popup)GetTemplateChild(ElementPopup); }
+        }
+
         public bool IsAutoComplete
         {
             get { return (bool)GetValue(IsAutoCompleteProperty); }
@@ -108,12 +109,6 @@ namespace WPFControl
         {
             get { return (bool)GetValue(IsFilterDisplayAllItemsProperty); }
             set { SetValue(IsFilterDisplayAllItemsProperty, value); }
-        }
-
-        public bool IsDropDownOpen
-        {
-            get { return (bool)GetValue(IsDropDownOpenProperty); }
-            set { SetValue(IsDropDownOpenProperty, value); }
         }
 
         public string FilterColumn
@@ -132,6 +127,7 @@ namespace WPFControl
         private void toggleButton_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllRecords();
+            Popup.IsOpen = IsDropDownOpen = !IsDropDownOpen;
         }
 
         private void _listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -139,7 +135,7 @@ namespace WPFControl
             var listbox = sender as ListBox;
             _autoComplete.SelectedItem = listbox.SelectedItem;
 
-            IsDropDownOpen = false;
+            Popup.IsOpen = false;
         }
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
@@ -168,17 +164,17 @@ namespace WPFControl
                 _autoComplete.SelectedItem = null;
             }
 
-            IsDropDownOpen = string.IsNullOrEmpty(textBox.Text) || records.Count > 0 ? true : false;
-            BindItemsSourceToListBox(records, string.IsNullOrEmpty(textBox.Text));            
+            Popup.IsOpen = string.IsNullOrEmpty(textBox.Text) || records.Count > 0 ? true : false;
+            BindItemsSourceToListBox(records, string.IsNullOrEmpty(textBox.Text));
         }
 
         private void _textBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Down)
             {
-                if (!IsDropDownOpen)
+                if (!Popup.IsOpen)
                 {
-                    IsDropDownOpen = !IsDropDownOpen;
+                    Popup.IsOpen = !Popup.IsOpen;
                     DisplayAllRecords();
                 }
             }
@@ -203,7 +199,7 @@ namespace WPFControl
         private void RaiseTextBoxEvent()
         {
             _textBox.TextChanged += _textBox_TextChanged;
-        }        
+        }
 
         private void DisplayAllRecords()
         {
