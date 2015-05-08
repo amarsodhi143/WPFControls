@@ -37,4 +37,30 @@
         </Setter>
     </Style>
 
+    <Style TargetType="{x:Type wpf:PopupHyperLink}">
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type wpf:PopupHyperLink}">
+                    <Grid>                        
+                        <TextBlock>
+                           <Hyperlink x:Name="PART_HyperLink"> Edit </Hyperlink>
+                        </TextBlock>
+
+                        <Popup x:Name="PART_Popup" StaysOpen="False" PopupAnimation="Slide" MinHeight="100" MinWidth="150" >
+                            <Grid>
+                                <TextBox x:Name="PART_TextBox" TextWrapping="Wrap" Height="50"/>
+                                <Button x:Name="PART_SaveButton" Content="Save" Height="23" Width="50" />
+                                <Button x:Name="PART_CloseButton" Content="Close" Height="23" Width="50" />
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

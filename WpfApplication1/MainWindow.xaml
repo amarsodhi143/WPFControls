@@ -20,6 +20,7 @@
         <wpf:AutoComplete Name="cmbEmployee" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
                           SelectedValuePath="EmployeeId" FilterColumn="EmployeeId" ItemTemplate="{StaticResource CrewTemplate}" SelectionChanged="cmbEmployee_SelectionChanged"/>
 
+        <wpf:PopupHyperLink Name="hyperlink" Data="{Binding EmpName}"/>
         <!--<wpf:AutoComplete Name="cmbEmployee1" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,10,0,0"
                           SelectedValuePath="EmpId" DisplayMemberPath="EmpId" />
 
