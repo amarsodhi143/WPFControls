@@ -17,16 +17,23 @@ namespace WPFControl
         private const string ElementHyperLink = "PART_HyperLink";
         private const string ElementPopup = "PART_Popup";
 
-        private bool IsDropDownOpen = false;
         private TextBox _textBox;
 
-        public PopupHyperLink()
+        public static readonly DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(object), typeof(PopupHyperLink), new FrameworkPropertyMetadata(string.Empty));
+
+        public static readonly RoutedEvent ClickEvent = EventManager.RegisterRoutedEvent("Click", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(PopupHyperLink));
+
+        public event RoutedEventHandler Click
         {
-            this.Resources.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
+            add { AddHandler(ClickEvent, value); }
+            remove { RemoveHandler(ClickEvent, value); }
         }
 
-        public static readonly DependencyProperty DataProperty = DependencyProperty.Register("Data", typeof(object), typeof(PopupHyperLink), new FrameworkPropertyMetadata(true));
-
+        protected virtual void OnClick()
+        {
+            RoutedEventArgs newEvent = new RoutedEventArgs(ButtonBase.ClickEvent, this);
+            RaiseEvent(newEvent);
+        }
 
         public override void OnApplyTemplate()
         {
@@ -40,7 +47,6 @@ namespace WPFControl
             hyperLink.Click += new System.Windows.RoutedEventHandler(hyperLink_Click);
             saveButton.Click += new System.Windows.RoutedEventHandler(saveButton_Click);
             closeButton.Click += new System.Windows.RoutedEventHandler(closeButton_Click);
-
         }
 
         public Popup Popup
@@ -56,21 +62,18 @@ namespace WPFControl
 
         private void hyperLink_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            _textBox.Text = Data.ToString();
-            Popup.IsOpen = IsDropDownOpen = !IsDropDownOpen;
+            _textBox.Text = Data != null ? Data.ToString() : string.Empty;
+            Popup.IsOpen = !Popup.IsOpen;
         }
 
         private void saveButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            ClosePopupWindow();
+            Data = _textBox.Text;
+            RaiseEvent(new RoutedEventArgs(PopupHyperLink.ClickEvent, this));
+            Popup.IsOpen = false;
         }
 
         private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            ClosePopupWindow();
-        }
-
-        private void ClosePopupWindow()
         {
             Popup.IsOpen = false;
         }
