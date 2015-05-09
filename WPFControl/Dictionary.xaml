@@ -37,25 +37,28 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type wpf:PopupHyperLink}">
+     <Style TargetType="{x:Type control:PopupHyperLink}">
         <Setter Property="Height" Value="15"/>
         <Setter Property="Width" Value="30"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type wpf:PopupHyperLink}">
-                    <Grid>                        
+                <ControlTemplate TargetType="{x:Type control:PopupHyperLink}">
+                    <Grid>
                         <TextBlock>
-                           <Hyperlink x:Name="PART_HyperLink"> Edit </Hyperlink>
+                           <Hyperlink x:Name="PART_HyperLink" Cursor="Hand"> Edit </Hyperlink>
                         </TextBlock>
-
-                        <Popup x:Name="PART_Popup" StaysOpen="False" PopupAnimation="Slide" MinHeight="100" MinWidth="150" >
-                            <Grid>
-                                <TextBox x:Name="PART_TextBox" TextWrapping="Wrap" Height="50"/>
-                                <Button x:Name="PART_SaveButton" Content="Save" Height="23" Width="50" />
-                                <Button x:Name="PART_CloseButton" Content="Close" Height="23" Width="50" />
-                            </Grid>
+                        <Popup x:Name="PART_Popup" StaysOpen="False" Placement="Bottom" PopupAnimation="Fade" Height="115" Width="280">
+                            <Border BorderThickness="1" BorderBrush="LightGray" Background="White" >
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="10" Direction="270" ShadowDepth="7" Opacity="0.5" />
+                                </Border.Effect>
+                                <Grid>
+                                    <TextBox Name="PART_TextBox" Height="65" Margin="10,11,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" 
+                                             VerticalContentAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
+                                    <Button Name="PART_SaveButton" Content="Save" Height="23" HorizontalAlignment="Right" Margin="0,0,65,7" VerticalAlignment="Bottom" Width="50" />
+                                    <Button Name="PART_CloseButton" Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,0,13,7" VerticalAlignment="Bottom" Width="50" />
+                                </Grid>
+                            </Border>
                         </Popup>
                     </Grid>
                 </ControlTemplate>
