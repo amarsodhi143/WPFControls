@@ -29,12 +29,6 @@ namespace WPFControl
             remove { RemoveHandler(ClickEvent, value); }
         }
 
-        protected virtual void OnClick()
-        {
-            RoutedEventArgs newEvent = new RoutedEventArgs(ButtonBase.ClickEvent, this);
-            RaiseEvent(newEvent);
-        }
-
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -44,9 +38,11 @@ namespace WPFControl
             var closeButton = (Button)GetTemplateChild(ElementCloseButton);
             var hyperLink = (Hyperlink)GetTemplateChild(ElementHyperLink);
 
-            hyperLink.Click += new System.Windows.RoutedEventHandler(hyperLink_Click);
-            saveButton.Click += new System.Windows.RoutedEventHandler(saveButton_Click);
-            closeButton.Click += new System.Windows.RoutedEventHandler(closeButton_Click);
+            _textBox.Text = Data != null ? Data.ToString() : string.Empty;
+
+            hyperLink.Click += new RoutedEventHandler(hyperLink_Click);
+            saveButton.Click += new RoutedEventHandler(saveButton_Click);
+            closeButton.Click += new RoutedEventHandler(closeButton_Click);
         }
 
         public Popup Popup
@@ -60,20 +56,19 @@ namespace WPFControl
             set { SetValue(DataProperty, value); }
         }
 
-        private void hyperLink_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            _textBox.Text = Data != null ? Data.ToString() : string.Empty;
+        private void hyperLink_Click(object sender, RoutedEventArgs e)
+        {            
             Popup.IsOpen = !Popup.IsOpen;
         }
 
-        private void saveButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             Data = _textBox.Text;
             RaiseEvent(new RoutedEventArgs(PopupHyperLink.ClickEvent, this));
             Popup.IsOpen = false;
         }
 
-        private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             Popup.IsOpen = false;
         }

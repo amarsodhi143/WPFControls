@@ -7,18 +7,18 @@
     <Window.Resources>
         <DataTemplate x:Key="CrewTemplate">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding EmployeeId}" />
+                <TextBlock Text="{Binding CrewId}" />
                 <TextBlock Text=" : " />
-                <TextBlock Text="{Binding FirstName}" />
-                <TextBlock Text=", " />
-                <TextBlock Text="{Binding LastName}" />
+                <TextBlock Text="{Binding CrewName}" />
+                <!--<TextBlock Text=", " />
+                <TextBlock Text="{Binding LastName}" />-->
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
     
     <Grid>
         <wpf:AutoComplete Name="cmbEmployee" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
-                          SelectedValuePath="EmployeeId" FilterColumn="EmployeeId" ItemTemplate="{StaticResource CrewTemplate}" SelectionChanged="cmbEmployee_SelectionChanged"/>
+                          SelectedValuePath="CrewId" FilterColumn="CrewId" ItemTemplate="{StaticResource CrewTemplate}" />
 
         <wpf:PopupHyperLink Name="hyperlink" Data="{Binding EmpName}"/>
         <!--<wpf:AutoComplete Name="cmbEmployee1" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,10,0,0"

@@ -20,7 +20,7 @@ using System.ComponentModel;
 
 namespace WPFControl
 {
-    public partial class AutoComplete : MultiSelector
+    public class AutoComplete : Selector
     {
         private const string ElementTextBox = "PART_EditableTextBox";
         private const string ElementListBox = "PART_ListBox";
@@ -30,12 +30,11 @@ namespace WPFControl
         private AutoComplete _autoComplete;
         private TextBox _textBox;
         private ListBox _listBox;
-        private bool IsDropDownOpen = false;
+     
 
         public AutoComplete()
         {
             this.Resources.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
-
             //var myResourceDictionary = new ResourceDictionary();
             //myResourceDictionary.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
             //Application.Current.Resources.MergedDictionaries.Add(myResourceDictionary);
@@ -123,11 +122,9 @@ namespace WPFControl
             set { SetValue(FilterModeProperty, value); }
         }
 
-
         private void toggleButton_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllRecords();
-            Popup.IsOpen = IsDropDownOpen = !IsDropDownOpen;
         }
 
         private void _listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -218,6 +215,5 @@ namespace WPFControl
             RaiseTextBoxEvent();
             RaiseListBoxEvent();
         }
-
     }
 }

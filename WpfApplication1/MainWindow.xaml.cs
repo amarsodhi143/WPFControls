@@ -25,7 +25,7 @@ namespace WpfApplication1
         {
             InitializeComponent();
 
-            cmbEmployee.ItemsSource = entity.Employees.OrderBy(x => x.EmployeeId).ToList();
+            cmbEmployee.ItemsSource = entity.Crews.OrderBy(x => x.CrewId).ToList();
         }
 
         private void cmbEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
