@@ -19,7 +19,7 @@ namespace WPFControl
             return null;
         }
 
-        public static List<object> GetItems(this AutoComplete autoComplete, TextBox textBox, Enums.FilterMode filterMode = Enums.FilterMode.StartsWith)
+        public static List<object> GetItems(this AutoCompleteComboBox autoComplete, TextBox textBox, Enums.FilterMode filterMode = Enums.FilterMode.StartsWith)
         {
             var filterText = textBox.Text;
             var filterItems = autoComplete.ItemsSource.Cast<object>();

@@ -35,7 +35,8 @@ namespace WpfApplication1
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           cmbEmployee.SelectedValue = -1;
+            cmbEmployee.TextBox.Text = "DU204";
+
         }
     }
 }
