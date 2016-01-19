@@ -213,7 +213,7 @@ namespace WPFControl
         private void autoComplete_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             listBox.MinWidth = autoComplete.ActualWidth;
-        }
+        }        
 
         private void DisplayAllRecords()
         {

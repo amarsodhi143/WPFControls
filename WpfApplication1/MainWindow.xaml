@@ -10,8 +10,6 @@
                 <TextBlock Text="{Binding CrewId}" />
                 <TextBlock Text=" : " />
                 <TextBlock Text="{Binding CrewName}" />
-                <!--<TextBlock Text=", " />
-                <TextBlock Text="{Binding LastName}" />-->
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
@@ -20,12 +18,7 @@
         <wpf:AutoCompleteComboBox Name="cmbEmployee" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
                           SelectedValuePath="CrewId" FilterColumn="CrewId" ItemTemplate="{StaticResource CrewTemplate}" />
 
-        <wpf:PopupHyperLink Name="hyperlink" Data="{Binding EmpName}"/>
-        <!--<wpf:AutoComplete Name="cmbEmployee1" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,10,0,0"
-                          SelectedValuePath="EmpId" DisplayMemberPath="EmpId" />
-
-        <wpf:AutoComplete Name="cmbCompany" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,50,0,0"
-                          DisplayMemberPath="CompanyId"/>-->
+        <!--<wpf:PopupHyperLink Name="hyperlink" Data="{Binding EmpName}"/>-->
         
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="25,184,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
     </Grid>

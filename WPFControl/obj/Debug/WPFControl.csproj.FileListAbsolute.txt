@@ -13,3 +13,4 @@ G:\WPFControls\WPFControl\obj\Debug\Dictionary.baml
 G:\WPFControls\WPFControl\obj\Debug\WPFControl.g.resources
 G:\WPFControls\WPFControl\obj\Debug\WPFControl.dll
 G:\WPFControls\WPFControl\obj\Debug\WPFControl.pdb
+G:\WPFControls\WPFControl\obj\Debug\WPFControl.csprojResolveAssemblyReference.cache
