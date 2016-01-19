@@ -48,6 +48,7 @@
     <Compile Include="Converter.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Extension.cs" />
+    <Compile Include="PasswordHash.cs" />
     <Compile Include="PopupHyperLink.cs" />
     <Compile Include="PreviewTextBox.cs" />
     <Compile Include="PreviewTextChangedEventArgs.cs" />
