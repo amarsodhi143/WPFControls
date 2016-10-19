@@ -16,7 +16,7 @@
     
     <Grid>
         <wpf:AutoCompleteComboBox Name="cmbEmployee" Width="200" Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"
-                          SelectedValuePath="CrewId" FilterColumn="CrewId" ItemTemplate="{StaticResource CrewTemplate}" />
+                          SelectedValuePath="CrewIdx" FilterColumn="CrewId" ItemTemplate="{StaticResource CrewTemplate}" IsAddNewIcon="True" />
 
         <!--<wpf:PopupHyperLink Name="hyperlink" Data="{Binding EmpName}"/>-->
         

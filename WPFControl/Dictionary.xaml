@@ -3,14 +3,15 @@
                     xmlns:control="clr-namespace:WPFControl">
 
     <control:BoolToInvertedBoolConverter x:Key="BoolToInvertedBoolConverter" />
+    <control:ButtonImages x:Key="ButtonImages"/>
 
-    <Style TargetType="ToggleButton" x:Key="ComboToggleButton">
+    <Style TargetType="ToggleButton" x:Key="ArrowComboToggleButton">
         <Setter Property="Width" Value="20" />
         <Setter Property="Height" Value="20" />
         <Setter Property="HorizontalAlignment" Value="Right" />
-        <Setter Property="OverridesDefaultStyle" Value="true" />
-        <Setter Property="IsTabStop" Value="false" />
-        <Setter Property="Focusable" Value="false" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -22,47 +23,53 @@
         </Setter>
     </Style>
 
+    <Style TargetType="ToggleButton" x:Key="AddComboToggleButton">
+        <Setter Property="Width" Value="16" />
+        <Setter Property="Height" Value="16" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Background="Transparent">
+                        <Image Source="{Binding AddLocation, Source={StaticResource ButtonImages}}" HorizontalAlignment="Right"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.60"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style TargetType="{x:Type control:AutoCompleteComboBox}">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type control:AutoCompleteComboBox}">
-                    <Grid >
-                        <control:PreviewTextBox x:Name="PART_EditableTextBox" />
-                        <ToggleButton Name="PART_ToggleButton" Style="{StaticResource ComboToggleButton}" 
-                                       IsEnabled="{Binding ElementName=PART_Popup, Path=IsOpen, Converter={StaticResource BoolToInvertedBoolConverter}}"/>
-                        <Popup x:Name="PART_Popup" StaysOpen="False" IsOpen="{Binding IsChecked, ElementName=PART_ToggleButton, Mode=TwoWay}" >
-                            <ListBox Name="PART_ListBox" MaxHeight="250" />
-                        </Popup>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style TargetType="{x:Type control:PopupHyperLink}">
-        <Setter Property="Height" Value="15"/>
-        <Setter Property="Width" Value="30"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type control:PopupHyperLink}">
                     <Grid>
-                        <TextBlock>
-                           <Hyperlink x:Name="PART_HyperLink" Cursor="Hand"> Edit </Hyperlink>
-                        </TextBlock>
-                        <Popup x:Name="PART_Popup" StaysOpen="False" Placement="Bottom" PopupAnimation="Fade" Height="115" Width="280">
-                            <Border BorderThickness="1" BorderBrush="LightGray" Background="White" >
-                                <Grid>
-                                    <TextBox Name="PART_TextBox" Height="70" Margin="5,5,5,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" 
-                                             VerticalContentAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
-                                    <Button Name="PART_SaveButton" Content="Save" Height="23" HorizontalAlignment="Right" Margin="0,0,65,2" VerticalAlignment="Bottom" Width="50" />
-                                    <Button Name="PART_CloseButton" Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,0,13,2" VerticalAlignment="Bottom" Width="50" />
-                                </Grid>
-                            </Border>
+                        <control:PreviewTextBox x:Name="PART_EditableTextBox"/>
+                        <ToggleButton Name="PART_AddToggleButton" Visibility="Collapsed" Style="{StaticResource AddComboToggleButton}" Margin="0,0,15,0" Cursor="Hand" IsEnabled="False"/>
+                        <ToggleButton Name="PART_ToggleButton" Style="{StaticResource ArrowComboToggleButton}" IsEnabled="{Binding IsOpen, ElementName=PART_Popup, Converter={StaticResource BoolToInvertedBoolConverter}}"/>
+                        <Popup x:Name="PART_Popup" StaysOpen="False" AllowsTransparency="True" PopupAnimation="Slide" IsOpen="{Binding IsChecked, ElementName=PART_ToggleButton, Mode=TwoWay}" >
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <ListBox Name="PART_ListBox" MaxHeight="250">
+                                    </ListBox>
+                                    <Border Name="PART_SortBorder" BorderThickness="1" BorderBrush="Gray" Background="#EDEDED">
+                                        <CheckBox Name="PART_SortCheckBox" Content="Sort by name" Margin="2" />
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
                         </Popup>
                     </Grid>
                 </ControlTemplate>

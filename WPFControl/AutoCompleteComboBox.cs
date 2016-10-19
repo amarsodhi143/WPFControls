@@ -1,50 +1,37 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Interop;
-using System.Windows.Markup;
 using System.Windows.Media;
-using System.Windows.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Automation.Peers;
-using System.ComponentModel;
-using System.Text.RegularExpressions;
 
 namespace WPFControl
 {
     public class AutoCompleteComboBox : Selector
     {
+        private const string ElementPopup = "PART_Popup";
         private const string ElementTextBox = "PART_EditableTextBox";
         private const string ElementListBox = "PART_ListBox";
         private const string ElementToggleButton = "PART_ToggleButton";
         public const string ElementAddToggleButton = "PART_AddToggleButton";
-        private const string ElementPopup = "PART_Popup";
         private const string ElementSortCheckbox = "PART_SortCheckBox";
         private const string ElementSortBorder = "PART_SortBorder";
 
         public string lastSelectedText;
-        public PreviewTextBox textBox;
+        PreviewTextBox textBox;
         AutoCompleteComboBox autoComplete;
         ListBox listBox;
         CheckBox sortByCheckBox;
         Int32 selectedIndex = -1;
-        string defaultValue = "-1";
+        Int32 defaultIndex = -1;
+        string defaultFilterValue = "-1";
 
         public AutoCompleteComboBox()
         {
             this.Resources.Source = new Uri("/WPFControl;component/Dictionary.xaml", UriKind.Relative);
         }
-
-        public static readonly DependencyProperty IsAutoCompleteProperty = DependencyProperty.Register("IsAutoComplete", typeof(bool), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata(true));
 
         public static readonly DependencyProperty IsAddNewIconProperty = DependencyProperty.Register("IsAddNewIcon", typeof(bool), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata(false));
 
@@ -52,7 +39,7 @@ namespace WPFControl
 
         public static readonly DependencyProperty FilterColumnProperty = DependencyProperty.Register("FilterColumn", typeof(object), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata());
 
-        public static readonly DependencyProperty SortByColumnProperty = DependencyProperty.Register("SortByColumn", typeof(object), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata());
+        public static readonly DependencyProperty SortColumnProperty = DependencyProperty.Register("SortColumn", typeof(object), typeof(AutoCompleteComboBox), new FrameworkPropertyMetadata());
 
         public new static readonly RoutedEvent SelectionChangedEvent = EventManager.RegisterRoutedEvent("SelectionChanged", RoutingStrategy.Bubble, typeof(SelectionChangedEventHandler), typeof(AutoCompleteComboBox));
 
@@ -85,20 +72,9 @@ namespace WPFControl
                 toggleButton.Click += new RoutedEventHandler(toggleButton_Click);
             }
 
-            if (sortByCheckBox != null && SortByColumn != null)
-            {
-                sortByCheckBox.Checked += new RoutedEventHandler(sortByCheckBox_Checked);
-                sortByCheckBox.Unchecked += new RoutedEventHandler(sortByCheckBox_Checked);
-            }
-            else
-            {
-                sortBorder.Visibility = Visibility.Collapsed;
-            }
-
-            if (textBox != null && autoComplete.IsAutoComplete)
+            if (textBox != null && FilterColumn != null)
             {
                 textBox.PreviewTextChanged += new PreviewTextChangedEventHandler(textBox_PreviewTextChanged);
-                textBox.PreviewKeyUp += textBox_PreviewKeyUp;
                 textBox.LostFocus += new RoutedEventHandler(textBox_LostFocus);
             }
 
@@ -108,17 +84,17 @@ namespace WPFControl
                 addToggleButton.Visibility = Visibility.Visible;
             }
 
-            this.PreviewKeyDown += AutoCompleteComboBox_PreviewKeyDown;
-        }
-
-        void textBox_PreviewKeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key != Key.Back && e.Key != Key.Delete && e.Key != Key.Space && ((e.Key < Key.NumPad0) || (e.Key > Key.NumPad9)) && ((e.Key < Key.A) || (e.Key > Key.Z)))
+            if (sortByCheckBox != null && SortColumn != null)
             {
-                return;
+                sortByCheckBox.Checked += new RoutedEventHandler(sortByCheckBox_Checked);
+                sortByCheckBox.Unchecked += new RoutedEventHandler(sortByCheckBox_Checked);
+            }
+            else
+            {
+                sortBorder.Visibility = Visibility.Collapsed;
             }
 
-            var text = (sender as PreviewTextBox).Text;
+            this.PreviewKeyDown += AutoCompleteComboBox_PreviewKeyDown;
         }
 
         public new event SelectionChangedEventHandler SelectionChanged
@@ -130,12 +106,6 @@ namespace WPFControl
         public Popup Popup
         {
             get { return (Popup)GetTemplateChild(ElementPopup); }
-        }
-
-        public bool IsAutoComplete
-        {
-            get { return (bool)GetValue(IsAutoCompleteProperty); }
-            set { SetValue(IsAutoCompleteProperty, value); }
         }
 
         public bool IsAddNewIcon
@@ -156,10 +126,10 @@ namespace WPFControl
             set { SetValue(FilterColumnProperty, value); }
         }
 
-        public string SortByColumn
+        public string SortColumn
         {
-            get { return (string)GetValue(SortByColumnProperty); }
-            set { SetValue(SortByColumnProperty, value); }
+            get { return (string)GetValue(SortColumnProperty); }
+            set { SetValue(SortColumnProperty, value); }
         }
 
 
@@ -179,6 +149,7 @@ namespace WPFControl
 
         private void textBox_PreviewTextChanged(object sender, PreviewTextChangedEventArgs e)
         {
+            selectedIndex = defaultIndex;
             var records = new List<object>();
             var filterTextBox = e.Text;
 
@@ -188,7 +159,7 @@ namespace WPFControl
             if (!string.IsNullOrEmpty(filterTextBox.Trim()) && !string.IsNullOrEmpty(FilterColumn))
             {
                 var filterItems = autoComplete.ItemsSource.Cast<object>();
-                filterItems = filterItems.Where(x => GetValueFromObject(x, autoComplete.SelectedValuePath) != defaultValue && GetValueFromObject(x, FilterColumn).ToLower().StartsWith(filterTextBox.ToLower()));
+                filterItems = filterItems.Where(x => GetValueFromObject(x, FilterColumn) != null && GetValueFromObject(x, FilterColumn).ToString().ToLower().StartsWith(filterTextBox.ToLower()));
                 records = filterItems.ToList();
             }
 
@@ -211,7 +182,7 @@ namespace WPFControl
                     {
                         Popup.IsOpen = !Popup.IsOpen;
                         DisplayAllRecords();
-                        selectedIndex = -1;
+                        selectedIndex = defaultIndex;
                     }
 
                     if (selectedIndex < listBox.Items.Count - 1)
@@ -228,12 +199,15 @@ namespace WPFControl
                         selectedIndex -= 1;
                         listBox.ScrollIntoView(listBox.Items[selectedIndex]);
                         HighlightRowSelection();
-
                     }
                     break;
 
                 case Key.Enter:
-                    listBox.SelectedItem = listBox.Items[selectedIndex];
+                    if (selectedIndex > defaultIndex)
+                    {
+                        listBox.SelectedItem = listBox.Items[selectedIndex];
+                        e.Handled = true;
+                    }
                     break;
             }
 
@@ -253,9 +227,11 @@ namespace WPFControl
         {
             if (e.AddedItems.Count > 0)
             {
-                SelectionChangedEventArgs args = new SelectionChangedEventArgs(SelectionChangedEvent, e.RemovedItems, e.AddedItems);
                 autoComplete.SelectedItem = e.AddedItems.Cast<object>().First();
-                RaiseEvent(args);
+
+                RaiseEvent(new SelectionChangedEventArgs(SelectionChangedEvent, e.RemovedItems, e.AddedItems));
+
+                Popup.IsOpen = false;
             }
         }
 
@@ -263,7 +239,15 @@ namespace WPFControl
         {
             if (e.AddedItems.Count > 0)
             {
-                textBox.Text = GetValueFromObject(autoComplete.SelectedItem, FilterColumn);
+                var columnName = string.IsNullOrEmpty(FilterColumn) ? DisplayMemberPath : FilterColumn;
+                if (string.IsNullOrEmpty(columnName) && autoComplete.ItemTemplate != null)
+                {
+                    ListBoxItem listBoxItem = listBox.ItemContainerGenerator.ContainerFromItem(listBox.SelectedItem) as ListBoxItem;
+                    TextBlock textBlock = FindFirstElementInVisualTree<TextBlock>(listBoxItem);
+                    columnName = textBlock.GetBindingExpression(TextBlock.TextProperty).ParentBinding.Path.Path;
+                }
+
+                textBox.Text = GetValueFromObject(autoComplete.SelectedItem, columnName).ToString();
             }
         }
 
@@ -301,10 +285,10 @@ namespace WPFControl
             {
                 IOrderedEnumerable<object> orderByRecords = null;
 
-                var defaultRecord = records.SingleOrDefault(x => GetValueFromObject(x, autoComplete.SelectedValuePath) == defaultValue);
+                var defaultRecord = records.SingleOrDefault(x => GetValueFromObject(x, autoComplete.SelectedValuePath).ToString() == defaultFilterValue);
                 if (defaultRecord != null) records.Remove(defaultRecord);
 
-                var splitSortColumns = SortByColumn.Split(',').ToList();
+                var splitSortColumns = SortColumn.Split(',').ToList();
                 for (int i = 0; i < splitSortColumns.Count; i++)
                 {
                     var columnName = splitSortColumns[i];
@@ -334,7 +318,7 @@ namespace WPFControl
             var item = listBox.ItemContainerGenerator.ContainerFromItem(listBox.Items[selectedIndex]) as ListBoxItem;
             if (item != null)
             {
-                item.BorderBrush = Brushes.Black;
+                item.BorderBrush = Brushes.CornflowerBlue;
             }
         }
 
@@ -350,11 +334,36 @@ namespace WPFControl
             });
         }
 
-        private string GetValueFromObject(object selectedItem, string columnName)
+        private object GetValueFromObject(object selectedItem, string columnName)
         {
             if (selectedItem != null)
             {
-                return selectedItem.GetType().GetProperty(columnName).GetValue(selectedItem, null).ToString();
+                return selectedItem.GetType().GetProperty(columnName).GetValue(selectedItem, null);
+            }
+            return null;
+        }
+
+        private T FindFirstElementInVisualTree<T>(DependencyObject parentElement) where T : DependencyObject
+        {
+            var count = VisualTreeHelper.GetChildrenCount(parentElement);
+            if (count == 0)
+                return null;
+
+            for (int i = 0; i < count; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parentElement, i);
+
+                if (child != null && child is T)
+                {
+                    return (T)child;
+                }
+                else
+                {
+                    var result = FindFirstElementInVisualTree<T>(child);
+                    if (result != null)
+                        return result;
+
+                }
             }
             return null;
         }
